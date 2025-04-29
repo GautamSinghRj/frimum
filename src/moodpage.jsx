@@ -10,7 +10,7 @@ function MoodPage({moodTitle}) {
     const mood = moods.find((m) => m.title === moodTitle); 
 
      useEffect(() => {
-        fetch(`http://localhost:8080/${mood.title.split(" ")[0]}`)
+        fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`)
           .then((response) => response.json())
           .then((data) => {
             setFetchedState(data);
