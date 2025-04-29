@@ -520,9 +520,9 @@ p{
   .artists img{
     width: 30vw;
   }
-  .play{transform: translateX(3rem);}
-  .next{transform: translateX(3rem);}
-  .previous{transform: translateX(3rem);}
-  .repeat{transform: translateX(3rem);}
-  .shuffle{transform: translateX(3rem);}
+  .play{transform: translateX(2.7rem);}
+  .next{transform: translateX(2.7rem);}
+  .previous{transform: translateX(2.7rem);}
+  .repeat{transform: translateX(2.7rem);}
+  .shuffle{transform: translateX(2.7rem);}
 }
