@@ -503,7 +503,7 @@ p{
     height: 6vh;
   }
   .search_btn{
-    transform: translate(-2rem,2rem);
+    transform: translate(-5rem,3rem);
     width: auto;
     height: 4vh;
     z-index: 1;
@@ -518,7 +518,7 @@ p{
   .search {
     transform: translateX(0rem);
     height: 3rem; 
-    width: 25rem; 
+    width: 22rem; 
   }
   .nav_bar-mobile a{
     font-size: 0.8rem;

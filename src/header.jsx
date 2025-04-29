@@ -104,7 +104,8 @@ const stripePromise = loadStripe(paykey);
                 />
             </div>
             <div className="nav_bar-mobile">
-                <Link to="/" className="home">
+                <span>
+                    <Link to="/" className="home">
                     <img src="./pic/home.png" alt="Go to home" />
                 </Link>
                 <p className="support"  onClick={handlePayment}>
@@ -117,6 +118,7 @@ const stripePromise = loadStripe(paykey);
                     alt="Login with Google"
                     onClick={loginWithGoogle}
                 />
+                </span>
                 <img
                     loading="lazy"
                     className="search_btn"
