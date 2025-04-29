@@ -492,7 +492,7 @@ p{
     justify-content: center;
     align-items: center;  
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 3rem;
   }
   .moods {
     width: auto;
@@ -502,5 +502,13 @@ p{
     overflow: hidden;
     position: relative; 
     text-align: center;
+  }
+  .moods img{
+    width: 15vw;
+    height: 60vw;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 1; 
   }
 }
