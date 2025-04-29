@@ -1,9 +1,8 @@
 services:
   - type: web
     name: music-backend
-    env: java
+    env: docker
     repo: https://github.com/GautamSinghRj/frimum
     rootDir: music_backend
-    buildCommand: ./mvnw clean install
-    startCommand: java -jar target/music_backend-0.0.1-SNAPSHOT.jar
+    plan: free
     autoDeploy: true
