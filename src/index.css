@@ -511,6 +511,9 @@ p{
     position: relative;
     z-index: 1; 
   }
+  .artists{
+    width: 20vw; 
+  }
   .artists img{
     width: 20vw;
   }
