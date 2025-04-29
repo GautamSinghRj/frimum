@@ -557,29 +557,29 @@ p{
   .artists img{
     width: 30vw;
   }
-  .play{transform: translateX(2rem);}
+  .play{transform: translateX(0rem);}
   .play:hover{
-  transform:translateX(2rem)scale(1.05);
+  transform:translateX(0rem)scale(1.05);
 }
-  .next{transform: translateX(2rem);}
+  .next{transform: translateX(0rem);}
   .next:hover{
-  transform:translateX(2rem)scale(0.9);
+  transform:translateX(0rem)scale(0.9);
 }
-  .previous{transform: translateX(2rem);}
+  .previous{transform: translateX(0rem);}
   .previous:hover{
-  transform:translateX(2rem)scale(0.9);
+  transform:translateX(0rem)scale(0.9);
 }
-  .repeat{transform: translateX(2rem);}
+  .repeat{transform: translateX(0rem);}
   .repeat:hover{
-  transform:translateX(2rem)scale(1.05);
+  transform:translateX(0rem)scale(1.05);
 }
-  .shuffle{transform: translateX(2rem);}
+  .shuffle{transform: translateX(0rem);}
   .shuffle:hover{
-  transform:translateX(2rem)scale(1.05);
+  transform:translateX(0rem)scale(1.05);
 }
 .song_img img{
   width: 15vw;
-  transform: translate(0.8rem,0.15rem);
+  transform: translate(0rem,0.15rem);
 }
 .song_name,.start_len,.progress_bar{
   display: none;
