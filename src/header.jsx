@@ -104,7 +104,7 @@ const stripePromise = loadStripe(paykey);
                 />
             </div>
             <div className="nav_bar-mobile">
-                <span>
+                <span className="same_line">
                     <Link to="/" className="home">
                     <img src="./pic/home.png" alt="Go to home" />
                 </Link>

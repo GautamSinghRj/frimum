@@ -482,6 +482,13 @@ p{
     align-items: center;
     height: 50vh;
   }
+  nav_bar-mobile .same_line{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
   .nav_bar{
     display: none;
   }
@@ -503,7 +510,7 @@ p{
     height: 6vh;
   }
   .search_btn{
-    transform: translate(-5rem,3rem);
+    transform: translate(-8rem,4rem);
     width: auto;
     height: 4vh;
     z-index: 1;
