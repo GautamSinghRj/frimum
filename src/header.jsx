@@ -118,7 +118,7 @@ const stripePromise = loadStripe(paykey);
                     name="search"
                     id="search"
                     rows={3}
-                    cols={50}
+                    cols={80}
                     placeholder="What do you want to play?"
                 ></textarea>   
                 <p className="support"  onClick={handlePayment}>
