@@ -483,6 +483,7 @@ p{
     height: 50vh;
   }
   nav_bar-mobile .same_line{
+    display: flex;
     flex-direction: row!important;
   }
   .nav_bar{
@@ -506,7 +507,7 @@ p{
     height: 6vh;
   }
   .search_btn{
-    transform: translate(-8rem,3.5rem);
+    transform: translate(-8rem,3.6rem);
     width: auto;
     height: 4vh;
     z-index: 1;
