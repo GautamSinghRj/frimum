@@ -107,6 +107,16 @@ const stripePromise = loadStripe(paykey);
                 <Link to="/" className="home">
                     <img src="./pic/home.png" alt="Go to home" />
                 </Link>
+                <p className="support"  onClick={handlePayment}>
+                    Support Us
+                </p>
+                <img
+                    loading="lazy"
+                    className="login"
+                    src={userImage || "./pic/user.png"}
+                    alt="Login with Google"
+                    onClick={loginWithGoogle}
+                />
                 <img
                     loading="lazy"
                     className="search_btn"
@@ -121,16 +131,6 @@ const stripePromise = loadStripe(paykey);
                     cols={50}
                     placeholder="What do you want to play?"
                 ></textarea>   
-                <p className="support"  onClick={handlePayment}>
-                    Support Us
-                </p>
-                <img
-                    loading="lazy"
-                    className="login"
-                    src={userImage || "./pic/user.png"}
-                    alt="Login with Google"
-                    onClick={loginWithGoogle}
-                />
             </div>
         </header>
     );
