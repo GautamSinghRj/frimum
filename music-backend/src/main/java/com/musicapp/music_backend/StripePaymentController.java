@@ -24,8 +24,8 @@ public class StripePaymentController {
 
         SessionCreateParams params = SessionCreateParams.builder()
                 .setMode(SessionCreateParams.Mode.PAYMENT)
-                .setSuccessUrl("http://localhost:3000/success")
-                .setCancelUrl("http://localhost:3000/failed")
+                .setSuccessUrl("https://frimum.vercel.app/success")
+                .setCancelUrl("https://frimum.vercel.app/failed")
                 .addLineItem(
                         SessionCreateParams.LineItem.builder()
                                 .setQuantity(1L)
