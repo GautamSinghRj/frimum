@@ -498,4 +498,158 @@ p{
     width: 100%;
     height: 20vh; 
   }
-}
+
+    body {
+      font-size: 14px;
+      overflow-x: hidden;
+    }
+  
+    h1, .second_h1, .mood_heading, .artist_heading {
+      font-size: 1.8rem;
+      transform: none;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .description,
+    .diff_description,
+    .artist_info,
+    .singer_info {
+      font-size: 1rem;
+      transform: none;
+      text-align: center;
+      padding: 0 1rem;
+    }
+  
+    .indivual_img,
+    .artist_img {
+      float: none;
+      transform: none;
+      height: 30vh;
+      width: 50vw;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .artist_container,
+    .music_controls {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .artists,
+    .moods {
+      width: 80vw;
+      min-height: auto;
+    }
+  
+    .artists img {
+      width: 50vw;
+      height: 20vh;
+    }
+  
+    .search {
+      width: 90vw;
+      transform: none;
+    }
+  
+    .search_btn,
+    .support,
+    .login,
+    .home,
+    .play,
+    .next,
+    .previous,
+    .shuffle,
+    .repeat {
+      transform: none;
+      height: 4vh;
+    }
+  
+    .support,
+    .login {
+      width: 80vw;
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    .song_img img {
+      width: 20vw;
+      height: 10vh;
+      transform: none;
+    }
+  
+    .song_name {
+      width: 60vw;
+      transform: none;
+      text-align: center;
+    }
+  
+    .progress_bar {
+      width: 80%;
+      transform: none;
+      margin: 0 auto;
+    }
+  
+    .start_len,
+    .end_len {
+      transform: none;
+      text-align: center;
+    }
+  
+    .payment_success,
+    .payment_failed {
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .songs_header,
+    .song_row {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 0.5rem;
+    }
+
+      .mood_heading {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 1rem;
+      }
+    
+      .moods {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    
+      .artists {
+        width: 80vw;
+        min-height: auto;
+        text-align: center;
+        padding: 1rem;
+      }
+    
+      .artists img {
+        width: 50vw;
+        height: auto;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+    
+      .song_name {
+        font-size: 1rem;
+        word-break: break-word;
+      }
+    
+      .description {
+        font-size: 0.9rem;
+        white-space: normal;
+      }
+    
+    }
+    
+  
