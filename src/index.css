@@ -480,7 +480,7 @@ p{
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 10vh;
   }
   .nav_bar{
     display: none;
