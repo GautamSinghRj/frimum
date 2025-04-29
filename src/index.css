@@ -541,6 +541,6 @@ p{
   transform:translateX(2.5rem)scale(1.05);
 }
 .song_img img{
-  transform: translate(-18rem,0.15rem);
+  transform: translate(1rem,0.15rem);
 }
 }
