@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: music-backend
-    env: docker
-    repo: https://github.com/GautamSinghRj/frimum
-    rootDir: music-backend
-    plan: free
-    autoDeploy: true
