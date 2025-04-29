@@ -11,7 +11,7 @@ function ArtistPage({ artistName }) {
 
 
   useEffect(() => {
-    fetch(`http://localhost:8080/${artist.name.split(" ")[0]}`)
+    fetch(`https://frimum.onrender.com/${artist.name.split(" ")[0]}`)
       .then((response) => response.json())
       .then((data) => {
         setFetchedState(data);
