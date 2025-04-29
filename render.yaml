@@ -3,6 +3,6 @@ services:
     name: music-backend
     env: docker
     repo: https://github.com/GautamSinghRj/frimum
-    rootDir: music_backend
+    rootDir: music-backend
     plan: free
     autoDeploy: true
