@@ -512,7 +512,10 @@ p{
     z-index: 1; 
   }
   .artists{
-    width: 20vw; 
+    width: 30vw; 
+  }
+  .artist_container{
+    gap: 3rem;
   }
   .artists img{
     width: 30vw;
