@@ -13,7 +13,7 @@ const stripePromise = loadStripe(paykey);
   const handlePayment = async () => {
     const stripe = await stripePromise;
 
-    const response = await fetch('http://localhost:8080/api/payment/create-checkout-session', {
+    const response = await fetch('https://frimum.onrender.com/api/payment/create-checkout-session', {
       method: 'POST',
     });
 
@@ -43,7 +43,7 @@ const stripePromise = loadStripe(paykey);
                 if (result && result.user) {
                     const user = result.user;
 
-                    const response = await fetch("http://localhost:8080/login", {
+                    const response = await fetch("https://frimum.onrender.com/login", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -92,6 +92,36 @@ const stripePromise = loadStripe(paykey);
                     cols={50}
                     placeholder="What do you want to play?"
                 ></textarea>    
+                <p className="support"  onClick={handlePayment}>
+                    Support Us
+                </p>
+                <img
+                    loading="lazy"
+                    className="login"
+                    src={userImage || "./pic/user.png"}
+                    alt="Login with Google"
+                    onClick={loginWithGoogle}
+                />
+            </div>
+            <div className="nav_bar-mobile">
+                <Link to="/" className="home">
+                    <img src="./pic/home.png" alt="Go to home" />
+                </Link>
+                <img
+                    loading="lazy"
+                    className="search_btn"
+                    src="./pic/search.png"
+                    alt="Search button"
+                />
+                <textarea
+                    className="search"
+                    name="search"
+                    id="search"
+                    rows={3}
+                    cols={50}
+                    placeholder="What do you want to play?"
+                ></textarea>
+                <br /><br />    
                 <p className="support"  onClick={handlePayment}>
                     Support Us
                 </p>
