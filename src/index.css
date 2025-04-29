@@ -477,7 +477,6 @@ p{
   .nav_bar-mobile{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 1rem;
     height: 20vh;
   }
@@ -494,5 +493,9 @@ p{
     align-items: center;  
     flex-wrap: wrap;
     gap: 5rem;
+  }
+  .moods img{
+    width: 20vw;
+    height: 20vh; 
   }
 }
