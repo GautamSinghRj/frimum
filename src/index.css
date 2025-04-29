@@ -477,6 +477,7 @@ p{
   .nav_bar-mobile{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     height: 20vh;
   }
