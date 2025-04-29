@@ -23,6 +23,7 @@ import com.musicapp.music_backend.entities.Romantic;
 import com.musicapp.music_backend.entities.Sad;
 import com.musicapp.music_backend.entities.Shaan;
 import com.musicapp.music_backend.entities.Shreya_ghosal;
+import com.musicapp.music_backend.entities.Song;
 import com.musicapp.music_backend.entities.Sonu_nigam;
 import com.musicapp.music_backend.entities.The_weekend;
 import com.musicapp.music_backend.entities.Udit_narayan;
@@ -43,6 +44,7 @@ import com.musicapp.music_backend.repo.Romantic_repo;
 import com.musicapp.music_backend.repo.Sad_repo;
 import com.musicapp.music_backend.repo.Shaan_repo;
 import com.musicapp.music_backend.repo.Shreya_repo;
+import com.musicapp.music_backend.repo.Song_repo;
 import com.musicapp.music_backend.repo.Sonu_repo;
 import com.musicapp.music_backend.repo.Udit_repo;
 import com.musicapp.music_backend.repo.Weekend_repo;
@@ -109,7 +111,15 @@ public class SongsController {
 	
 	@Autowired
 	Energetic_repo energetic;
+	
+	@Autowired
+	Song_repo songs;
 
+	@GetMapping("/Songs")
+	public List<Song> getAllsongs(){
+		return songs.findAll();
+	}
+	
 	@GetMapping("/Arijit")
 	public List<Arjit_singh> getArijitsongs(){
 		return arjit.findAll();
