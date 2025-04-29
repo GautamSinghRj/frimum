@@ -495,7 +495,7 @@ p{
     gap: 5rem;
   }
   .moods img{
-    width: 20vw;
+    width: auto;
     height: 20vh; 
   }
 }
