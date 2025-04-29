@@ -504,7 +504,7 @@ p{
     text-align: center;
   }
   .moods img{
-    width: 50vw;
+    width: 60vw;
     height: 60vw;
     object-fit: cover;
     border-radius: 0.5rem;
@@ -520,4 +520,9 @@ p{
   .artists img{
     width: 30vw;
   }
+  .play{transform: translateX(3.5rem);}
+  .next{transform: translateX(3.5rem);}
+  .previous{transform: translateX(3.5rem);}
+  .repeat{transform: translateX(3.5rem);}
+  .shuffle{transform: translateX(3.5rem);}
 }

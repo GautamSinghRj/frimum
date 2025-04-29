@@ -120,8 +120,7 @@ const stripePromise = loadStripe(paykey);
                     rows={3}
                     cols={50}
                     placeholder="What do you want to play?"
-                ></textarea>
-                <br /><br />    
+                ></textarea>   
                 <p className="support"  onClick={handlePayment}>
                     Support Us
                 </p>
