@@ -504,7 +504,7 @@ p{
     text-align: center;
   }
   .moods img{
-    width: 100%;
+    width: 50vw;
     height: 60vw;
     object-fit: cover;
     border-radius: 0.5rem;
