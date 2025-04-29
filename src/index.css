@@ -475,6 +475,7 @@ p{
 }
 @media (max-width: 768px) {
   .nav_bar-mobile{
+    display: flex;
     flex-direction: column;
     gap: 1rem;
   }
