@@ -565,11 +565,15 @@ p{
     width: 30vw;
   }
   .artistpage_section {
-    height: 80vh
+    height: 60vh
    }
    .artist_img{
     width: 30vw;
-    transform: translateX(0rem)translateY(6rem);
+    transform: translateX(5rem)translateY(6rem);
+  }
+  .artist_heading{
+    font-size: 4rem;
+    transform: translateX(4rem)translateY(2rem);
   }
   .play{transform: translateX(0rem);}
   .play:hover{
