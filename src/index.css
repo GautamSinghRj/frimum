@@ -570,7 +570,7 @@ p{
   }
   .artist_heading{
     font-size: 2rem;
-    transform: translateX(-1rem)translateY(12rem);
+    transform: translateX(-2rem)translateY(13rem);
   }
   .play{transform: translateX(0rem);}
   .play:hover{
