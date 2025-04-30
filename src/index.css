@@ -569,10 +569,10 @@ p{
    }
    .artist_img{
     width: 30vw;
-    transform: translateX(6rem)translateY(6rem);
+    transform: translateX(8rem)translateY(6rem);
   }
   .artist_heading{
-    font-size: 4rem;
+    font-size: 3rem;
     transform: translateX(3rem)translateY(4rem);
   }
   .play{transform: translateX(0rem);}
