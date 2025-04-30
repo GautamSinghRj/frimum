@@ -8,7 +8,7 @@ Frimum is a cloud-based music streaming player, similar to Spotify, designed to 
 - **Create Playlists**: Build and manage your personalized playlists.
 - **Recommendations**: Get music suggestions tailored to your taste.
 - **Responsive Design**: Enjoy Frimum on any device.
-- **Offline Mode**: (If applicable, mention the feature here.)
+- **Offline Mode**: Yes
 
 ## Technologies Used
 
@@ -46,7 +46,9 @@ Follow these steps to set up the project locally:
 
 ## Screenshots
 
-Include some images or GIFs showcasing the app's interface here.
+
+![frimum vercel app_](https://github.com/user-attachments/assets/75b22228-4cb9-43a8-8b0c-ae71b329479b)
+![frimum vercel app_Romantic%20Songs](https://github.com/user-attachments/assets/5473ec3e-c072-47f1-8b7f-4269605e0804)
 
 ## Contributing
 
