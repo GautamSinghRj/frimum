@@ -13,7 +13,7 @@ Frimum is a cloud-based music streaming player, similar to Spotify, designed to 
 ## Technologies Used
 
 - **Frontend**: React.js
-- **Backend**: Java
+- **Backend**: Spring Boot
 - **Styling**: CSS, HTML
 - **Others**: Docker for deployment
 
