@@ -562,7 +562,7 @@ p{
     gap: 3rem;
   }
   .artists img{
-    width: 30vw;
+    width: 50vw;
   }
   .artistpage_section {
     height: 60vh
@@ -572,8 +572,8 @@ p{
     transform: translateX(8rem)translateY(6rem);
   }
   .artist_heading{
-    font-size: 4rem;
-    transform: translateX(2rem)translateY(6rem);
+    font-size: 3rem;
+    transform: translateX(0rem)translateY(8rem);
   }
   .play{transform: translateX(0rem);}
   .play:hover{
