@@ -564,6 +564,13 @@ p{
   .artists img{
     width: 30vw;
   }
+  .artistpage_section {
+    height: 80vh
+   }
+   .artist_img{
+    width: 30vw;
+    transform: translateX(0rem)translateY(6rem);
+  }
   .play{transform: translateX(0rem);}
   .play:hover{
   transform:translateX(0rem)scale(1.05);
