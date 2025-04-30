@@ -569,8 +569,8 @@ p{
     transform: translateX(8rem)translateY(6rem);
   }
   .artist_heading{
-    font-size: 2.5rem;
-    transform: translateX(-1rem)translateY(11rem);
+    font-size: 2rem;
+    transform: translateX(-1rem)translateY(12rem);
   }
   .play{transform: translateX(0rem);}
   .play:hover{
