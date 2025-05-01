@@ -9,7 +9,7 @@ import { paykey } from "./paykey";
 function Header() {
    
 const [inputValue, setInputValue] = useState("");
-
+console.log(inputValue);
 const postInputChange = async()=>{ 
     const res=await fetch("https://frimum.onrender.com/Song",{
     method: "POST",
