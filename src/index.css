@@ -80,12 +80,12 @@ body{
   height: 3rem; 
   width: 25rem; 
   line-height: 3rem; 
-  color: #727272; 
+  color: white; 
 }
 
 .search::placeholder {
   text-align: center;
-  color: #0A0A0A; 
+  color: white; 
 }
 h1{
   transform: translateX(4rem);  
