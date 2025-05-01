@@ -85,7 +85,7 @@ body{
 
 .search::placeholder {
   text-align: center;
-  color: rgba(255, 255, 255, 0.5); 
+  color: #0A0A0A; 
 }
 h1{
   transform: translateX(4rem);  
