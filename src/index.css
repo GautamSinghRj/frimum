@@ -558,6 +558,9 @@ p{
   .artists{
     width: 30vw; 
   }
+  .artists img{
+  width: 30vw;
+}
   .artist_container{
     gap: 3rem;
   }
