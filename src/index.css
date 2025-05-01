@@ -564,7 +564,7 @@ p{
     height: 60vh
    }
    .artist_img{
-    width: 50vw;
+    width: 40vw;
     transform: translateX(6.5rem)translateY(6rem);
   }
   .diff_description{
@@ -574,7 +574,7 @@ p{
   .artist_heading{
     font-size: 2rem;
     font-weight: bolder;
-    transform: translateX(-5rem)translateY(13rem);
+    transform: translateX(-4rem)translateY(13rem);
   }
   .singer_info{
     font-size: 1rem;
