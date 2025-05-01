@@ -117,7 +117,7 @@ public class SongsController {
 	@Autowired
 	Song_repo songs;
 
-	@PostMapping("/Songs")
+	@PostMapping("/Song")
 	public Song getSong(@RequestBody InputValue inputValueObj){
 		String inputvalue=inputValueObj.getInputValue();
 		Song song=songs.findByName(inputvalue);
