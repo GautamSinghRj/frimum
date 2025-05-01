@@ -8,6 +8,22 @@ import { paykey } from "./paykey";
  
 function Header() {
    
+const [inputValue, setInputValue] = useState("");
+
+const postInputChange = async()=>{ 
+    const res=await fetch("https://frimum.onrender.com/Song",{
+    method: "POST",
+    headers: {
+        'Content-Type': 'application/json'  
+      },
+    body: JSON.stringify({ inputValue }),     
+});
+const data = await res.json();  
+console.log(data);
+}
+
+
+
 const stripePromise = loadStripe(paykey); 
 
   const handlePayment = async () => {
@@ -121,6 +137,7 @@ const stripePromise = loadStripe(paykey);
                 <img
                     loading="lazy"
                     className="search_btn"
+                    onClick={postInputChange}
                     src="./pic/search.png"
                     alt="Search button"
                 />
@@ -128,6 +145,7 @@ const stripePromise = loadStripe(paykey);
                     className="search"
                     name="search"
                     id="search"
+                    onChange={(e) => setInputValue(e.target.value)}
                     rows={3}
                     cols={50}
                     placeholder="What do you want to play?"

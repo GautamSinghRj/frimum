@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.musicapp.music_backend.entities.AR_rahman;
@@ -115,9 +117,11 @@ public class SongsController {
 	@Autowired
 	Song_repo songs;
 
-	@GetMapping("/Songs")
-	public List<Song> getAllsongs(){
-		return songs.findAll();
+	@PostMapping("/Songs")
+	public Song getSong(@RequestBody InputValue inputValueObj){
+		String inputvalue=inputValueObj.getInputValue();
+		Song song=songs.findByName(inputvalue);
+		return song;
 	}
 	
 	@GetMapping("/Arijit")
