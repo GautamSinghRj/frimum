@@ -99,6 +99,7 @@ const stripePromise = loadStripe(paykey);
                     loading="lazy"
                     className="search_btn"
                     src="./pic/search.png"
+                    onClick={postInputChange}
                     alt="Search button"
                 />
                 <textarea
@@ -107,6 +108,7 @@ const stripePromise = loadStripe(paykey);
                     id="search"
                     rows={3}
                     cols={50}
+                    onChange={(e) => setInputValue(e.target.value)}
                     placeholder="What do you want to play?"
                 ></textarea>    
                 <p className="support"  onClick={handlePayment}>
