@@ -54,6 +54,7 @@ body{
   transform: translateX(5rem);
   width: auto;
   height: 4vh;
+  cursor: pointer;
   z-index: 1;
 }
 .support{
