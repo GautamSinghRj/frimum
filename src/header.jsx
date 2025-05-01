@@ -11,6 +11,7 @@ function Header() {
 const [inputValue, setInputValue] = useState("");
 
 const postInputChange = async()=>{ 
+    console.log(inputValue); 
     const res=await fetch("https://frimum.onrender.com/Song",{
     method: "POST",
     headers: {
@@ -150,7 +151,6 @@ const stripePromise = loadStripe(paykey);
                     cols={50}
                     placeholder="What do you want to play?"
                 ></textarea>   
-                {console.log(inputValue)}
             </div>
         </header>
     );
