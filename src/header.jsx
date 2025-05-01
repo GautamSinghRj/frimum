@@ -14,7 +14,7 @@ const postInputChange = async()=>{
     const res=await fetch("https://frimum.onrender.com/Song",{
     method: "POST",
     headers: {
-        'Content-Type': 'application/json'  
+        "Content-Type": "application/json"  
       },
     body: JSON.stringify({ inputValue }),     
 });
