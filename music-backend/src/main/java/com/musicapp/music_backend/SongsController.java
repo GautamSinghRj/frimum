@@ -117,12 +117,11 @@ public class SongsController {
 	
 	@Autowired
 	Song_repo songs;
-
-	@CrossOrigin(origins = "*")	
+	
 	@PostMapping("/Song")
 	public Song getSong(@RequestBody InputValue inputValueObj){
 		String inputvalue=inputValueObj.getInputValue();
-		return songs.findByName(inputvalue);
+		return songs.findByName(inputvalue);	
 	}
 	
 	@GetMapping("/Arijit")
