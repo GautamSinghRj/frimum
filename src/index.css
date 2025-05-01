@@ -569,16 +569,16 @@ p{
   }
   .diff_description{
     font-size: 1.2rem;
-    transform: translateX(-4rem)translateY(20rem);
+    transform: translateX(-2rem)translateY(20rem);
   }
   .artist_heading{
     font-size: 2rem;
     font-weight: bolder;
-    transform: translateX(-5rem)translateY(13rem);
+    transform: translateX(-3rem)translateY(13rem);
   }
   .singer_info{
     font-size: 1rem;
-    transform: translateX(-5rem)translateY(15rem);
+    transform: translateX(-3rem)translateY(15rem);
   }
   .play{transform: translateX(0rem);}
   .play:hover{
