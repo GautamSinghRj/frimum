@@ -11,7 +11,6 @@ function Header() {
 const [inputValue, setInputValue] = useState("");
 
 const postInputChange = async()=>{ 
-    console.log(inputValue); 
     const res=await fetch("https://frimum.onrender.com/Song",{
     method: "POST",
     headers: {
