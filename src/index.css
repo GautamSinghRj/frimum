@@ -568,8 +568,8 @@ p{
     transform: translateX(8rem)translateY(6rem);
   }
   .diff_description{
-    font-size: 1rem;
-    transform: translateX(0rem)translateY(18rem);
+    font-size: 1.2rem;
+    transform: translateX(-3rem)translateY(20rem);
   }
   .artist_heading{
     font-size: 2rem;
