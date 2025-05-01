@@ -567,10 +567,14 @@ p{
     width: 50vw;
     transform: translateX(8rem)translateY(6rem);
   }
+  .diff_description{
+    font-size: 1rem;
+    transform: translateX(0rem)translateY(18rem);
+  }
   .artist_heading{
     font-size: 2rem;
     font-weight: bolder;
-    transform: translateX(-3rem)translateY(13rem);
+    transform: translateX(-4rem)translateY(13rem);
   }
   .play{transform: translateX(0rem);}
   .play:hover{
