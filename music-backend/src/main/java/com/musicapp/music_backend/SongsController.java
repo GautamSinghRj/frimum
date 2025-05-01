@@ -3,6 +3,7 @@
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -117,6 +118,7 @@ public class SongsController {
 	@Autowired
 	Song_repo songs;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/Song")
 	public Song getSong(@RequestBody InputValue inputValueObj){
 		String inputvalue=inputValueObj.getInputValue();
