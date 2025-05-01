@@ -482,13 +482,6 @@ p{
     align-items: center;
     height: 50vh;
   }
-  nav_bar-mobile .same_line{
-    display: flex;
-    flex-direction: row!important;
-    display: flex;
-    align-items: center;   
-    
-  }
   .nav_bar{
     display: none;
   }
