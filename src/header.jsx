@@ -141,7 +141,6 @@ const stripePromise = loadStripe(paykey);
                     src="./pic/search.png"
                     alt="Search button"
                 />
-                {inputValue}
                 <textarea
                     className="search"
                     name="search"
@@ -151,6 +150,7 @@ const stripePromise = loadStripe(paykey);
                     cols={50}
                     placeholder="What do you want to play?"
                 ></textarea>   
+                {console.log(inputValue)}
             </div>
         </header>
     );
