@@ -1,5 +1,7 @@
 import Footer from "./footer";
 import Header from "./header";
+import { useContext } from "react";
+import { MusicContext } from "./context/musicContext";
 
 function SrcSong({song}){
     const { playSong } = useContext(MusicContext);
