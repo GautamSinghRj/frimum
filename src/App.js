@@ -4,6 +4,7 @@ import ContentPage from "./contentpage"
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 import Success from "./success";
 import Failed from "./failed";
+import SrcSong from "./srcsong";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/:content" element={<ContentPage />} />
         <Route path="/success" element={<Success />} />
         <Route path="/failed" element={<Failed />} />
+        <Route path="/srcsong" element={<SrcSong />} />
       </Routes>   
     </Router>
 

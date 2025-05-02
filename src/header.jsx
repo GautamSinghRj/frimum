@@ -5,6 +5,7 @@ import { auth } from "./firebase";
 import { getRedirectResult } from "firebase/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import { paykey } from "./paykey";
+import SrcSong from "./srcsong";
  
 function Header() {
    
@@ -20,6 +21,7 @@ const postInputChange = async()=>{
 });
 const data = await res.json();  
 console.log(data);
+<SrcSong song={data} />
 }
 
 
@@ -94,6 +96,7 @@ const stripePromise = loadStripe(paykey);
                 <Link to="/" className="home">
                     <img src="./pic/home.png" alt="Go to home" />
                 </Link>
+                <Link to="/srcsong">
                 <img
                     loading="lazy"
                     className="search_btn"
@@ -101,6 +104,7 @@ const stripePromise = loadStripe(paykey);
                     onClick={postInputChange}
                     alt="Search button"
                 />
+                </Link>
                 <textarea
                     className="search"
                     name="search"
@@ -136,13 +140,14 @@ const stripePromise = loadStripe(paykey);
                     alt="Login with Google"
                     onClick={loginWithGoogle}
                 />
+                <Link to="/srcsong">
                 <img
                     loading="lazy"
                     className="search_btn"
                     onClick={postInputChange}
                     src="./pic/search.png"
                     alt="Search button"
-                />
+                /></Link>
                 <textarea
                     className="search"
                     name="search"
