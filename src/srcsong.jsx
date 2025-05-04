@@ -11,6 +11,7 @@ function SrcSong(){
     const [image, setImage] = useState(null);
 
     const postInputChange = async () => { 
+        try {
         const res = await fetch("https://frimum.onrender.com/Song", {
             method: "POST",
             headers: {
@@ -32,6 +33,10 @@ function SrcSong(){
         if (baseimg) {
             setImage(baseimg);
         }    
+    }
+        catch (error) {
+            console.error("Error fetching song data:", error);
+        }
     };
     
 useEffect(() => {
