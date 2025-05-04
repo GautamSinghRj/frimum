@@ -50,8 +50,8 @@ body{
   width: auto;
   height: 6vh;
 }
-link .search_btn{
-  transform: translateX(15rem);
+img.search_btn{
+  transform: translateX(5rem);
   width: auto;
   height: 4vh;
   cursor: pointer;
@@ -503,7 +503,7 @@ p{
     width: auto;
     height: 6vh;
   }
-  link .search_btn{
+  img.search_btn{
     transform: translate(-8rem,3.6rem);
     width: auto;
     height: 2vh;
