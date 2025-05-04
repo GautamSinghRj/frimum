@@ -53,7 +53,7 @@ body{
 link .search_btn{
   transform: translateX(5rem);
   width: auto;
-  height: 4vh;
+  height: 2vh;
   cursor: pointer;
   z-index: 1;
 }
@@ -506,7 +506,7 @@ p{
   link .search_btn{
     transform: translate(-8rem,3.6rem);
     width: auto;
-    height: 4vh;
+    height: 2vh;
     z-index: 1;
   }
   .support{
