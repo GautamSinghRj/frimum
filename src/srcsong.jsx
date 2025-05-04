@@ -5,8 +5,10 @@ import { MusicContext } from "./musicplayercontext";
 import { useState} from "react";
 function SrcSong(){
     const { playSong,inputValue } = useContext(MusicContext);
+
     const [song, setSong] = useState(null);
     const [image, setImage] = useState(null);
+
     const postInputChange = async()=>{ 
         const res=await fetch("https://frimum.onrender.com/Song",{
         method: "POST",
@@ -24,7 +26,7 @@ function SrcSong(){
         setImage(baseimg);
     }    
 }
-    postInputChange();
+
     return(
         <div>
             <Header/>
