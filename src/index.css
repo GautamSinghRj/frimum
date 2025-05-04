@@ -617,26 +617,3 @@ transform: translateX(0rem);
   transform: translateX(-0rem);
   }
 }
-.song_played_svg{
-  display: none;
-}
-.song_played_svg_on{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.song_played_svg_on svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-}
-
-.song_played_svg_on .shape-fill {
-  fill: #FFFFFF;
-}

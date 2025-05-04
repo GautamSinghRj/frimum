@@ -11,17 +11,25 @@ function Header() {
    
 const [inputValue, setInputValue] = useState("");
 
-const postInputChange = async()=>{ 
-    const res=await fetch("https://frimum.onrender.com/Song",{
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"  
-      },
-    body: JSON.stringify({ inputValue }),     
-});
- const data = await res.json();
- return data;  
-}
+const postInputChange = async () => {
+    try {
+        const res = await fetch("https://frimum.onrender.com/Song", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ inputValue }),
+        });
+        if (!res.ok) {
+            throw new Error("Failed to fetch song data");
+        }
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error("Error in postInputChange:", error);
+        return null; // Return null or a default value in case of an error
+    }
+};
 
 
 const stripePromise = loadStripe(paykey); 

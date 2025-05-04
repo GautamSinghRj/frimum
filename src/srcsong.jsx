@@ -8,11 +8,15 @@ function SrcSong({ song }) {
   const { playSong } = useContext(MusicContext);
   const [songData, setSongData] = useState(null);
   const [image, setImage] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchSong = async () => {
-      const songDetails = await song(); 
-      if (!songDetails || !songDetails.name) return;
+      const songDetails = await song();
+      if (!songDetails || !songDetails.name) {
+        setError(true); // Set error state if data is invalid
+        return;
+      }
 
       const query = encodeURIComponent(songDetails.name);
       const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
@@ -26,7 +30,13 @@ function SrcSong({ song }) {
     fetchSong();
   }, [song]);
 
-  if (!songData) return <div><Header /><main>Loading...</main><Footer /></div>;
+  if (error) {
+    return <div><Header /><main>Error loading song data.</main><Footer /></div>;
+  }
+
+  if (!songData) {
+    return <div><Header /><main>Loading...</main><Footer /></div>;
+  }
 
   return (
     <div>
