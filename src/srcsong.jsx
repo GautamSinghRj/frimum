@@ -5,6 +5,7 @@ import { MusicContext } from "./musicplayercontext";
 
 function SrcSong(){
     const { playSong,inputValue } = useContext(MusicContext);
+    const [song, setSong] = useState(null);
     const [image, setImage] = useState(null);
     const postInputChange = async()=>{ 
         const res=await fetch("https://frimum.onrender.com/Song",{
@@ -14,7 +15,7 @@ function SrcSong(){
           },
         body: JSON.stringify({ inputValue }),     
     });
-    const song = await res.json();
+    if(res){setSong(await res.json())};
     const query = encodeURIComponent(song.name);
     const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
     const data = await response.json();
