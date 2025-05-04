@@ -2,7 +2,7 @@ import Footer from "./footer";
 import Header from "./header";
 import { useContext } from "react";
 import { MusicContext } from "./musicplayercontext";
-
+import { useState} from "react";
 function SrcSong(){
     const { playSong,inputValue } = useContext(MusicContext);
     const [song, setSong] = useState(null);
