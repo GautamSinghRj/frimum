@@ -50,12 +50,21 @@ body{
   width: auto;
   height: 6vh;
 }
-img.search_btn{
-  transform: translateX(5rem);
+
+/* Update these styles in your index.css file */
+
+/* For desktop view */
+img.search_btn {
+  /* Remove the transform that's positioning it oddly */
+  position: relative;
+  /* Instead of using transform, use more predictable positioning */
+  margin-right: 1rem;
   width: auto;
   height: 4vh;
   cursor: pointer;
   z-index: 100;
+  /* Make sure the button is visible */
+  display: block;
 }
 .support{
   transform: translateX(33.5rem);
