@@ -9,7 +9,7 @@ import { MusicContext } from "./context/musicContext";
 function Songs(){
   const {isPlaying} = useContext(MusicContext);
   if(isPlaying){
-  document.querySelector('song_played_svg').addClass('song_played_svg_on');
+  document.querySelector('.song_played_svg').addClass('_on');
   }
     return(
         <div>
