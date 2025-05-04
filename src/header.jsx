@@ -147,4 +147,4 @@ const stripePromise = loadStripe(paykey);
 }
 
 
-export{Header,postInputChange};
+export default Header;

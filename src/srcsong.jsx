@@ -18,6 +18,7 @@ function SrcSong(){
     const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
     const data = await response.json();
     image = data.results?.[0]?.artworkUrl100?.replace('100x100', '1200x1200'); 
+    postInputChange();
     }
     return(
         <div>
