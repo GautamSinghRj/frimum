@@ -16,7 +16,7 @@ function App() {
         <Route path="/:content" element={<ContentPage />} />
         <Route path="/success" element={<Success />} />
         <Route path="/failed" element={<Failed />} />
-        <Route path="/srcsong" element={  <SrcSong song={postInputChange()} />} />
+        <Route path="/srcsong" element={  <SrcSong song={postInputChange} />} />
       </Routes>   
     </Router>
 
