@@ -53,7 +53,7 @@ body{
 link .search_btn{
   transform: translateX(5rem);
   width: auto;
-  height: 2vh!important;
+  height: 4vh;
   cursor: pointer;
   z-index: 1;
 }

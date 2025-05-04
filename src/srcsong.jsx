@@ -10,37 +10,53 @@ function SrcSong(){
     const [song, setSong] = useState(null);
     const [image, setImage] = useState(null);
 
-    const postInputChange = async()=>{ 
-        const res=await fetch("https://frimum.onrender.com/Song",{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"  
-          },
-        body: JSON.stringify({ inputValue }),     
-    });
-    if(!res.ok)return;
-    setSong(await res.json());
-    const query = encodeURIComponent(song.name);
-    const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
-    const data = await response.json();
-    const baseimg=data.results?.[0]?.artworkUrl100?.replace('100x100', '1200x1200'); 
-    if (baseimg) {
-        setImage(baseimg);
-    }    
-}
+    const postInputChange = async () => { 
+        const res = await fetch("https://frimum.onrender.com/Song", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"  
+            },
+            body: JSON.stringify({ inputValue }),     
+        });
+    
+        if (!res.ok) return;
+    
+        const songData = await res.json();
+        setSong(songData);
+    
+        const query = encodeURIComponent(songData.name);
+        const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
+        const data = await response.json();
+        const baseimg = data.results?.[0]?.artworkUrl100?.replace('100x100', '1200x1200'); 
+    
+        if (baseimg) {
+            setImage(baseimg);
+        }    
+    };
+    
 useEffect(() => {
-    if (inputValue) {
-        postInputChange();
+    if (!inputValue) {
+        return;
     }
+    postInputChange();
 }, [inputValue]);
 
     return(
         <div>
             <Header/>
             <main>
-                <img src={image} alt="Searched Song Image" />
-                <h1 onClick={() => playSong(song.link, song.id,song.name,song,song.length)}>{song.name}</h1>
-                <p>{song.length}</p>
+
+             {song && (
+                    <>
+             <img src={image} alt="Searched Song" />
+             <h1 onClick={() => playSong(song.link, song.id, song.name, song, song.length)}>
+             {song.name}
+             </h1>
+            <p>{song.length}</p>
+                </>
+         )}
+
+
             </main>
             <Footer/>
         </div>
