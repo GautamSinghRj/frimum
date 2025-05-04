@@ -508,10 +508,10 @@ p{
   }
   img.search_btn {
     position: absolute;
-    top: 50%;
-    right: 75%;
+    top: 20%;
+    right: 50%;
     width: auto;
-    height: 2vh;
+    height: 4vh;
     z-index: 101; 
   }
   .support{
