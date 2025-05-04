@@ -53,7 +53,7 @@ body{
 
 img.search_btn {
   position: relative;
-  margin-right: 5rem;
+  transform: translateX(5rem);
   width: auto;
   height: 4vh;
   cursor: pointer;
