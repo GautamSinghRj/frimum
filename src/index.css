@@ -50,8 +50,8 @@ body{
   width: auto;
   height: 6vh;
 }
- .search_btn{
-  transform: translateX(5rem);
+link .search_btn{
+  transform: translateX(15rem);
   width: auto;
   height: 4vh;
   cursor: pointer;
