@@ -50,10 +50,10 @@ body{
   width: auto;
   height: 6vh;
 }
-link .search_btn{
+link .search_btn img{
   transform: translateX(5rem);
   width: auto;
-  height: 2vh;
+  height: 4vh;
   cursor: pointer;
   z-index: 1;
 }
