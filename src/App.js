@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 import Success from "./success";
 import Failed from "./failed";
 import SrcSong from "./srcsong";
-import { postInputChange } from "./header";
+
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/:content" element={<ContentPage />} />
         <Route path="/success" element={<Success />} />
         <Route path="/failed" element={<Failed />} />
-        <Route path="/srcsong" element={  <SrcSong song={postInputChange} />} />
+        <Route path="/srcsong" element={<SrcSong />} />
       </Routes>   
     </Router>
 

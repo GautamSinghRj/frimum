@@ -5,24 +5,12 @@ import { auth } from "./firebase";
 import { getRedirectResult } from "firebase/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import { paykey } from "./paykey";
-
+import { useContext } from "react";
+import { MusicContext } from "./musicplayercontext";
  
 function Header() {
    
-const [inputValue, setInputValue] = useState("");
-
-postInputChange = async()=>{ 
-    const res=await fetch("https://frimum.onrender.com/Song",{
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"  
-      },
-    body: JSON.stringify({ inputValue }),     
-});
- const data = await res.json();
- return data;  
-}
-
+const {setInputValue} = useContext(MusicContext);
 
 const stripePromise = loadStripe(paykey); 
 
@@ -99,7 +87,6 @@ const stripePromise = loadStripe(paykey);
                     loading="lazy"
                     className="search_btn"
                     src="./pic/search.png"
-                    onClick={postInputChange}
                     alt="Search button"
                 />
                 </Link>
@@ -142,7 +129,6 @@ const stripePromise = loadStripe(paykey);
                 <img
                     loading="lazy"
                     className="search_btn"
-                    onClick={postInputChange}
                     src="./pic/search.png"
                     alt="Search button"
                 /></Link>

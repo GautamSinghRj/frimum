@@ -3,9 +3,17 @@ import Header from "./header";
 import { useContext } from "react";
 import { MusicContext } from "./musicplayercontext";
 
-function SrcSong({song}){
-    const { playSong } = useContext(MusicContext);
-    async()=>{
+function SrcSong(){
+    const { playSong,inputValue } = useContext(MusicContext);
+    const postInputChange = async()=>{ 
+        const res=await fetch("https://frimum.onrender.com/Song",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"  
+          },
+        body: JSON.stringify({ inputValue }),     
+    });
+    const song = await res.json();
     const query = encodeURIComponent(song.name);
     const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
     const data = await response.json();

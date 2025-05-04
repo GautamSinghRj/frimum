@@ -13,7 +13,7 @@ export const MusicProvider = ({ children }) => {
   const [imageUrl, setImageUrl] = useState(null);
   const [duration, setDuration] = useState("0:00");
   const [aud, setAud] = useState(null);
-
+  const [inputValue, setInputValue] = useState("");
   const audioRef = useRef(new Audio());
   
  
@@ -128,6 +128,8 @@ export const MusicProvider = ({ children }) => {
   return (
     <MusicContext.Provider
       value={{
+        inputValue,
+        setInputValue,
         aud,
         duration,
         imageUrl,
