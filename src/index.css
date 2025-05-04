@@ -508,7 +508,7 @@ p{
   }
   img.search_btn {
     position: absolute;
-    transform: translate(-7rem,3.5rem);
+    transform: translate(-6rem,3rem);
     width: auto;
     height: 4vh;
     z-index: 101; 
