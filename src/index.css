@@ -510,7 +510,6 @@ p{
     position: absolute;
     top: 50%;
     right: 75%;
-    transform: translateY(-50%);
     width: auto;
     height: 2vh;
     z-index: 101; 
