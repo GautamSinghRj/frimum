@@ -5,7 +5,7 @@ import { auth } from "./firebase";
 import { getRedirectResult } from "firebase/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import { paykey } from "./paykey";
-import SrcSong from "./srcsong";
+
  
 function Header() {
    
@@ -19,11 +19,9 @@ const postInputChange = async()=>{
       },
     body: JSON.stringify({ inputValue }),     
 });
-const data = await res.json();  
-console.log(data);
-<SrcSong song={data} />
+ const data = await res.json();
+ return data;  
 }
-
 
 
 const stripePromise = loadStripe(paykey); 
@@ -162,4 +160,4 @@ const stripePromise = loadStripe(paykey);
     );
 }
 
-export default Header;
+export {Header,postInputChange };
