@@ -27,7 +27,7 @@ const postInputChange = async () => {
         return data;
     } catch (error) {
         console.error("Error in postInputChange:", error);
-        return null; // Return null or a default value in case of an error
+        return null; 
     }
 };
 
