@@ -2,7 +2,7 @@ import Footer from "./footer";
 import Header from "./header";
 import { useContext } from "react";
 import { MusicContext } from "./musicplayercontext";
-import { useState} from "react";
+import { useState,useEffect} from "react";
 function SrcSong(){
     const { playSong,inputValue } = useContext(MusicContext);
 
@@ -17,7 +17,8 @@ function SrcSong(){
           },
         body: JSON.stringify({ inputValue }),     
     });
-    if(res){setSong(await res.json())};
+    if(!res.ok)return;
+    setSong(await res.json());
     const query = encodeURIComponent(song.name);
     const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
     const data = await response.json();
@@ -26,6 +27,11 @@ function SrcSong(){
         setImage(baseimg);
     }    
 }
+useEffect(() => {
+    if (inputValue) {
+        postInputChange();
+    }
+}, [inputValue]);
 
     return(
         <div>
