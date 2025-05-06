@@ -53,11 +53,11 @@ useEffect(() => {
 
              {song && (
                     <>
-             <img src={image} alt="Searched Song" />
-             <h1 onClick={() => playSong(song.link, song.id, song.name, song, song.length)}>
+             <img src={image} alt="Searched Song" className="searched_song_img" />
+             <h1 onClick={() => playSong(song.link, song.id, song.name, song, song.length)} className="searched_song_name">
              {song.name}
              </h1>
-            <p>{song.length}</p>
+            <p className="searched_song_len">{song.length}</p>
                 </>
          )}
 

@@ -508,7 +508,7 @@ p{
   }
   img.search_btn {
     position: absolute;
-    transform: translate(-6rem,3rem);
+    transform: translate(-5rem,2.7rem);
     width: auto;
     height: 4vh;
     z-index: 101; 
@@ -620,4 +620,20 @@ transform: translateX(0rem);
    font-size: 1.4rem;
   transform: translateX(-0rem);
   }
+}
+.searched_song_img{
+  width:50vw;
+  height: 50vh;
+  border-radius: 1.5rem;
+  left: 5rem;
+}
+.searched_song_name{
+  font-size: 2rem;
+  color: #FFFFFF;
+  transform: translate(8rem,-5rem);
+}
+.searched_song_len{
+  font-size: 2rem;
+  color: #FFFFFF;
+  transform: translate(11rem,-5rem);
 }
