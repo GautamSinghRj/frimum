@@ -622,10 +622,9 @@ transform: translateX(0rem);
   }
 }
 .searched_song_img{
-  width:50vw;
+  width:40vw;
   height: 50vh;
   border-radius: 1.5rem;
-  left: 5rem;
 }
 .searched_song_name{
   font-size: 2rem;
