@@ -35,7 +35,7 @@ function SrcSong(){
             setImage(baseimg);
         }
 
-        const  response2= (await fetch('https://frimum.onrender.com/getSong')).json;
+        const  response2=await fetch('https://frimum.onrender.com/getSong');
 
         if(response2.ok){
         const playlist = await response2.json();
