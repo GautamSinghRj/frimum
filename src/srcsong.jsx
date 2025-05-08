@@ -61,9 +61,13 @@ function SrcSong(){
     const result = await suggestion.json();
     const rawContent = result.choices[0].message.content.trim();
     const cleanedContent = rawContent.replace(/```json|```/g, "").trim();
-    setSugg(JSON.parse(cleanedContent));}
-    console.log("Raw response:", result.choices[0].message.content);
-
+    setSugg(JSON.parse(cleanedContent));
+    useEffect(() => {
+        if (sugg_songs) {
+            console.log("Updated Suggestions:", sugg_songs);
+        }
+    }, [sugg_songs]);
+    }
     }
         catch (error) {
             console.error("Error fetching song data:", error);
