@@ -35,7 +35,7 @@ function SrcSong(){
             setImage(baseimg);
         }
 
-        const  response2= await fetch('https://frimum.onrender.com/getSong');
+        const  response2= (await fetch('https://frimum.onrender.com/getSong')).json;
 
         if(response2.ok){
         const playlist = await response2.json();
@@ -91,7 +91,7 @@ useEffect(() => {
             {sugg_songs.map((songs,index)=>(
                 <div>
                     <h1 onClick={() => playSong(songs.link, index, songs.name, sugg_songs, songs.length)}>{songs.name}</h1>
-                    <p>{songs.length}</p>
+                <p>{songs.length}</p>
                 </div>
         ))}
                 </>
