@@ -88,7 +88,7 @@ useEffect(() => {
              </h1>
             <p className="searched_song_len">{song.length}</p>
 
-            {sugg_songs.map((songs,index)=>(
+            {Array.isArray(sugg_songs) && sugg_songs.map((songs,index)=>(
                 <div>
                     <h1 onClick={() => playSong(songs.link, index, songs.name, sugg_songs, songs.length)}>{songs.name}</h1>
                 <p>{songs.length}</p>
