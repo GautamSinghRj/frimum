@@ -62,7 +62,8 @@ function SrcSong(){
     const rawContent = result.choices[0].message.content.trim();
     const cleanedContent = rawContent.replace(/```json|```/g, "").trim();
     setSugg(JSON.parse(cleanedContent));}
-    console.log(sugg_songs);
+    console.log("Raw response:", result.choices[0].message.content);
+
     }
         catch (error) {
             console.error("Error fetching song data:", error);
