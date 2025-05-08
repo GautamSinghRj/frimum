@@ -10,6 +10,7 @@ import com.musicapp.music_backend.entities.Song;
 
 public interface Song_repo extends JpaRepository<Song,Long> {
 
-	Song findByNameIgnoreCase(String name);
+	Song findByName(String name);
+	
 	List<Song> findAll();
 }

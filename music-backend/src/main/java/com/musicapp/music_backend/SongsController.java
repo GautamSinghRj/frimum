@@ -120,7 +120,7 @@ public class SongsController {
 	@PostMapping("/Song")
 	public Song getSong(@RequestBody InputValue inputValueObj){
 		String inputvalue=inputValueObj.getInputValue();
-		return songs.findByNameIgnoreCase(inputvalue);	
+		return songs.findByName(inputvalue);	
 	}
 
 	@GetMapping("/getSong")

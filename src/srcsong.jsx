@@ -36,6 +36,7 @@ function SrcSong(){
         }
 
         const  response2= await fetch('https://frimum.onrender.com/getSong');
+
         if(response2.ok){
         const playlist = await response2.json();
         const suggestion=await fetch("https://openrouter.ai/api/v1/chat/completions",{
@@ -61,7 +62,7 @@ function SrcSong(){
     const rawContent = result.choices[0].message.content.trim();
     const cleanedContent = rawContent.replace(/```json|```/g, "").trim();
     setSugg(JSON.parse(cleanedContent));}
-    
+
     }
         catch (error) {
             console.error("Error fetching song data:", error);
@@ -89,8 +90,8 @@ useEffect(() => {
 
             {sugg_songs.map((songs,index)=>(
                 <div>
-                <h1 onClick={() => playSong(songs.link, index, songs.name, sugg_songs, songs.length)}>{songs.name}</h1>
-                <p>{songs.length}</p>
+                    <h1 onClick={() => playSong(songs.link, index, songs.name, sugg_songs, songs.length)}>{songs.name}</h1>
+                    <p>{songs.length}</p>
                 </div>
         ))}
                 </>
