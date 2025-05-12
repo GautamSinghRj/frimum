@@ -51,7 +51,7 @@ function SrcSong() {
                         "X-Title": "Music Recommendations App",
                     },
                     body: JSON.stringify({
-                        model: "mistralai/mistral-small-3.1-24b-instruct:free",
+                        model: "mistralai/mistral-7b-instruct:free",
                         messages: [
                             {
                                 role: "system",

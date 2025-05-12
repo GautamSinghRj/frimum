@@ -89,7 +89,7 @@ export const MusicProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "mistralai/mistral-small-3.1-24b-instruct:free",
+        model: "mistralai/mistral-7b-instruct:free",
         messages: [
           {
             role: "system",
