@@ -30,21 +30,10 @@ function SrcSong() {
 
                 setSong(songData);
                 const query = encodeURIComponent(songData.name);
-                const [response1, response2] = await Promise.all([
+                const [response1, response2,suggestion] = await Promise.all([
                      fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`),
-                    fetch("https://frimum.onrender.com/getSong")
-                   ]);
-                if (!response1.ok || !response2.ok) return;
-                
-                const data = await response1.json();
-
-                const baseimg = data.results?.[0]?.artworkUrl100?.replace('100x100', '1200x1200');
-                if (baseimg) setImage(baseimg);
-
-    
-                const playlist = await response2.json();
-
-                const suggestion = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                    fetch("https://frimum.onrender.com/getSong"),
+                    fetch("https://openrouter.ai/api/v1/chat/completions", {
                     method: "POST",
                     headers: {
                         Authorization: "Bearer " + key,
@@ -68,7 +57,17 @@ function SrcSong() {
                             },
                         ],
                     }),
-                });
+                })
+                   ]);
+                if (!response1.ok || !response2.ok) return;
+                
+                const data = await response1.json();
+
+                const baseimg = data.results?.[0]?.artworkUrl100?.replace('100x100', '1200x1200');
+                if (baseimg) setImage(baseimg);
+
+    
+                const playlist = await response2.json();
 
                 const result = await suggestion.json();
                 const rawContent = result.choices?.[0]?.message?.content?.trim();
