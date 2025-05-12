@@ -3,75 +3,52 @@ import Header from "./header";
 import { useContext, useState, useEffect } from "react";
 import { MusicContext } from "./musicplayercontext";
 import { key } from "./key";
-import { useDebounce } from "use-debounce";
 
 function SrcSong() {
     const { playSong, inputValue } = useContext(MusicContext);
-    const [debouncedInput] = useDebounce(inputValue, 500);
     const [sugg_songs, setSugg] = useState(null);
     const [song, setSong] = useState(null);
     const [image, setImage] = useState(null);
-    const [loadingSuggestions, setLoadingSuggestions] = useState(false);
 
     useEffect(() => {
-        if (!debouncedInput) return;
+        if (!inputValue) return;
 
-        const controller = new AbortController();
-
-        const fetchSongFromBackend = async () => {
+        const postInputChange = async () => {
             try {
                 const res = await fetch("https://frimum.onrender.com/Song", {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ inputValue: debouncedInput }),
-                    signal: controller.signal,
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ inputValue }),
                 });
-                if (!res.ok) return null;
-                return await res.json();
-            } catch (err) {
-                console.error("Error fetching song from backend:", err);
-                return null;
-            }
-        };
 
-        const fetchItunesImage = async (songName) => {
-            try {
-                const query = encodeURIComponent(songName);
-                const res = await fetch(
-                    `https://itunes.apple.com/search?term=${query}&entity=song&limit=1`,
-                    { signal: controller.signal }
-                );
-                if (!res.ok) return null;
-                const data = await res.json();
-                return data.results?.[0]?.artworkUrl100?.replace("100x100", "1200x1200") || null;
-            } catch (err) {
-                console.error("Error fetching image from iTunes:", err);
-                return null;
-            }
-        };
+                if (!res.ok) return;
 
-        const fetchPlaylist = async () => {
-            try {
-                const res = await fetch("https://frimum.onrender.com/getSong", {
-                    signal: controller.signal,
-                });
-                if (!res.ok) return null;
-                return await res.json();
-            } catch (err) {
-                console.error("Error fetching playlist:", err);
-                return null;
-            }
-        };
+                const songData = await res.json();
+                if (!songData?.name) return;
 
-        const fetchSuggestions = async (playlist, songName) => {
-            try {
-                console.log("Sending request to OpenRouter with playlist:", playlist);
-                setLoadingSuggestions(true);
-                const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                setSong(songData);
+
+                const query = encodeURIComponent(songData.name);
+                const response = await fetch(`https://itunes.apple.com/search?term=${query}&entity=song&limit=1`);
+                const data = await response.json();
+
+                const baseimg = data.results?.[0]?.artworkUrl100?.replace('100x100', '1200x1200');
+                if (baseimg) setImage(baseimg);
+
+                const response2 = await fetch('https://frimum.onrender.com/getSong');
+                if (!response2.ok) return;
+
+                const playlist = await response2.json();
+
+                const suggestion = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                     method: "POST",
                     headers: {
                         Authorization: "Bearer " + key,
                         "Content-Type": "application/json",
+                        "HTTP-Referer": window.location.origin,
+                        "X-Title": "Music Recommendations App",
                     },
                     body: JSON.stringify({
                         model: "mistralai/mistral-7b-instruct:free",
@@ -83,23 +60,15 @@ function SrcSong() {
                             },
                             {
                                 role: "user",
-                                content: `Playlist: ${JSON.stringify(
-                                    playlist
-                                )}. Current song: ${JSON.stringify(
-                                    songName
+                                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(
+                                    songData.name
                                 )}. Recommend and return three songs object from the list.`,
                             },
                         ],
                     }),
-                    signal: controller.signal,
                 });
 
-                if (!res.ok) {
-                    console.warn("Suggestion API request failed");
-                    return;
-                }
-
-                const result = await res.json();
+                const result = await suggestion.json();
                 const rawContent = result.choices?.[0]?.message?.content?.trim();
                 if (!rawContent) return;
 
@@ -119,47 +88,13 @@ function SrcSong() {
                 } catch (e) {
                     console.error("Failed to parse suggestions:", e);
                 }
-            } catch (err) {
-                if (err.name !== "AbortError") {
-                    console.error("Error fetching suggestions:", err);
-                }
-            } finally {
-                setLoadingSuggestions(false);
-            }
-        };
-
-        const fetchData = async () => {
-            try {
-                const songData = await fetchSongFromBackend();
-                if (!songData?.name) {
-                    console.warn("No song returned from backend.");
-                    return;
-                }
-
-                setSong(songData);
-                const [imageUrl, playlist] = await Promise.all([
-                    fetchItunesImage(songData.name),
-                    fetchPlaylist(),
-                ]);
-
-                if (imageUrl) setImage(imageUrl);
-
-                if (playlist) {
-                    await fetchSuggestions(playlist, songData.name);
-                } else {
-                    console.warn("Playlist not available, skipping suggestions.");
-                }
             } catch (error) {
-                if (error.name !== "AbortError") {
-                    console.error("Unhandled error during fetchData:", error);
-                }
+                console.error("Error fetching song data:", error);
             }
         };
 
-        fetchData();
-
-        return () => controller.abort();
-    }, [debouncedInput]);
+        postInputChange();
+    }, [inputValue]);
 
     return (
         <div>
@@ -180,20 +115,12 @@ function SrcSong() {
                         </h1>
                         <p className="searched_song_len">{song.length}</p>
 
-                        {loadingSuggestions && <p>Loading recommendations...</p>}
-
                         {Array.isArray(sugg_songs) &&
                             sugg_songs.map((songs, index) => (
                                 <div key={songs.id || index}>
                                     <h1
                                         onClick={() =>
-                                            playSong(
-                                                songs.link,
-                                                index,
-                                                songs.name,
-                                                sugg_songs,
-                                                songs.length
-                                            )
+                                            playSong(songs.link, index, songs.name, sugg_songs, songs.length)
                                         }
                                     >
                                         {songs.name}
