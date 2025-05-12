@@ -49,7 +49,7 @@ function SrcSong() {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        model: "mistralai/mistral-7b-instruct:free",
+                        model: "microsoft/phi-4-reasoning:free",
                         messages: [
                             {
                                 role: "system",
