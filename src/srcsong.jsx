@@ -39,6 +39,7 @@ function SrcSong(){
 
         if(response2.ok){
         const playlist = await response2.json();
+        console.log(playlist);
         const suggestion=await fetch("https://openrouter.ai/api/v1/chat/completions",{
             method: "POST",
             headers: { Authorization: "Bearer " + key,
@@ -62,7 +63,7 @@ function SrcSong(){
     const rawContent = result.choices[0].message.content.trim();
     const cleanedContent = rawContent.replace(/```json|```/g, "").trim();
     setSugg(JSON.parse(cleanedContent));}
-
+    console.log(sugg_songs);
 
     }
         catch (error) {
