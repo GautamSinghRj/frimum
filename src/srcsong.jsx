@@ -67,6 +67,7 @@ function SrcSong() {
                 });
 
                 const result = await suggestion.json();
+                console.log(result);
                 const rawContent = result.choices?.[0]?.message?.content?.trim();
                 if (!rawContent) return;
 
