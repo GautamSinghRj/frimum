@@ -113,8 +113,7 @@ function SrcSong() {
                         </h1>
                         <p className="searched_song_len">{song.length}</p>
 
-                        {Array.isArray(sugg_songs) &&
-                            sugg_songs.map((songs, index) => (
+                        {sugg_songs.map((songs, index) => (
                                 <div key={songs.id || index}>
                                     <h1
                                         onClick={() =>
