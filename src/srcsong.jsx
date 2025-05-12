@@ -34,7 +34,7 @@ function SrcSong(){
         if (baseimg) {
             setImage(baseimg);
         }
-
+        console.log(songData);
         const  response2=await fetch('https://frimum.onrender.com/getSong');
 
         if(response2.ok){
@@ -54,7 +54,7 @@ function SrcSong(){
               ,
               {
                 role: "user",
-                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(inputValue)}. Recommend and return three songs from the list.`,
+                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(songData.name)}. Recommend and return three songs from the list.`,
               },
             ],
         }),
