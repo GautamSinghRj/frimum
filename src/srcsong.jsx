@@ -54,8 +54,6 @@ function SrcSong() {
                 headers: {
                     Authorization: "Bearer " + key,
                     "Content-Type": "application/json",
-                    "HTTP-Referer": window.location.origin,
-                    "X-Title": "Music Recommendations App",
                 },
                 body: JSON.stringify({
                     model: "mistralai/mistral-7b-instruct:free",
