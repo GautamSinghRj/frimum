@@ -90,7 +90,7 @@ function SrcSong() {
                 console.error("Error fetching song data:", error);
             }
         };
-
+        console.log(sugg_songs);
         postInputChange();
     }, [inputValue]);
 
