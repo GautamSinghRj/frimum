@@ -49,7 +49,7 @@ function SrcSong() {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        model: "microsoft/phi-4-reasoning:free",
+                        model: "google/gemma-3-1b-it:free",
                         messages: [
                             {
                                 role: "system",

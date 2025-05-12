@@ -89,7 +89,7 @@ export const MusicProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "openai/gpt-3.5-turbo:free",
+        model: "google/gemma-3-1b-it:free",
         messages: [
           {
             role: "system",
