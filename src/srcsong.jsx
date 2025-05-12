@@ -47,8 +47,6 @@ function SrcSong() {
                     headers: {
                         Authorization: "Bearer " + key,
                         "Content-Type": "application/json",
-                        "HTTP-Referer": window.location.origin,
-                        "X-Title": "Music Recommendations App",
                     },
                     body: JSON.stringify({
                         model: "mistralai/mistral-7b-instruct:free",
@@ -61,7 +59,7 @@ function SrcSong() {
                             {
                                 role: "user",
                                 content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(
-                                    songData.name
+                                    song.name
                                 )}. Recommend and return three songs object from the list.`,
                             },
                         ],
