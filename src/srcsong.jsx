@@ -34,12 +34,10 @@ function SrcSong(){
         if (baseimg) {
             setImage(baseimg);
         }
-        console.log(songData);
         const  response2=await fetch('https://frimum.onrender.com/getSong');
 
         if(response2.ok){
         const playlist = await response2.json();
-        console.log(playlist);
         const suggestion=await fetch("https://openrouter.ai/api/v1/chat/completions",{
             method: "POST",
             headers: { Authorization: "Bearer " + key,
@@ -54,7 +52,7 @@ function SrcSong(){
               ,
               {
                 role: "user",
-                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(songData.name)}. Recommend and return three songs from the list.`,
+                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(songData.name)}. Recommend and return three songs object from the list.`,
               },
             ],
         }),
