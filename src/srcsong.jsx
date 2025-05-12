@@ -55,11 +55,14 @@ function SrcSong() {
                         messages: [
                             {
                                 role: "system",
-                                content: "You are a music recommender. Suggest three alike songs according to the mood and vibe of the song from the given song. Respond ONLY with the full song object from the playlist in JSON format."
+                                content:
+                                    "You are a music recommender. Suggest three alike songs according to the mood and vibe of the song from the given song. Respond ONLY with the full song object from the playlist in JSON format.",
                             },
                             {
                                 role: "user",
-                                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(songData.name)}. Recommend and return three songs object from the list.`,
+                                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(
+                                    songData.name
+                                )}. Recommend and return three songs object from the list.`,
                             },
                         ],
                     }),
@@ -69,17 +72,22 @@ function SrcSong() {
                 const rawContent = result.choices?.[0]?.message?.content?.trim();
                 if (!rawContent) return;
 
-                const cleanedContent = rawContent.replace(/```json|```/g, "").trim();
+                const cleanedContent = rawContent
+                    .replace(/```json|```/g, "")
+                    .replace(/,\s*}/g, "}")
+                    .replace(/,\s*]/g, "]")
+                    .trim();
 
                 try {
                     const parsed = JSON.parse(cleanedContent);
                     if (Array.isArray(parsed)) {
                         setSugg(parsed);
+                    } else {
+                        console.warn("Suggestions were not an array:", parsed);
                     }
                 } catch (e) {
                     console.error("Failed to parse suggestions:", e);
                 }
-
             } catch (error) {
                 console.error("Error fetching song data:", error);
             }
