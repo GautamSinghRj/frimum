@@ -89,7 +89,7 @@ export const MusicProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "microsoft/phi-4-reasoning:free",
+        model: "openai/gpt-3.5-turbo:free",
         messages: [
           {
             role: "system",
