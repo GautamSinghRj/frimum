@@ -59,7 +59,7 @@ function SrcSong() {
                             {
                                 role: "user",
                                 content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(
-                                    song.name
+                                    songData.name
                                 )}. Recommend and return three songs object from the list.`,
                             },
                         ],
