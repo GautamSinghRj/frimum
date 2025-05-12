@@ -104,19 +104,30 @@ export const MusicProvider = ({ children }) => {
       }),
     });
     
-    const result = await response.json();
-    const rawContent = result.choices[0].message.content.trim();
-    const cleanedContent = rawContent.replace(/```json|```/g, "").trim();
-    const suggestion = JSON.parse(cleanedContent);
+const result = await response.json();
 
-    if (shuffle) {
-      playSong(suggestion.link, suggestion.id, suggestion.name, songlist,suggestion.length);
-    } else {
-      nextIndex = currentIndex + 1 < songlist.length ? currentIndex + 1 : 0;
-      playSong(songlist[nextIndex].link, nextIndex, songlist[nextIndex].name, songlist,songlist[nextIndex].length);
-    }
-    
-  };
+if (!result?.choices?.[0]?.message?.content) {
+  console.error("Invalid response from OpenRouter:", result);
+  return;
+}
+
+const rawContent = result.choices[0].message.content.trim();
+
+try {
+  const cleanedContent = rawContent.replace(/```json|```/g, "").trim();
+  const suggestion = JSON.parse(cleanedContent);
+
+  if (shuffle) {
+    playSong(suggestion.link, suggestion.id, suggestion.name, songlist, suggestion.length);
+  } else {
+    nextIndex = currentIndex + 1 < songlist.length ? currentIndex + 1 : 0;
+    const nextSong = songlist[nextIndex];
+    playSong(nextSong.link, nextIndex, nextSong.name, songlist, nextSong.length);
+  }
+} catch (e) {
+  console.error("Error parsing AI response:", e, rawContent);
+}
+  }
 
   const playPreviousSong = () => {
     if (songlist.length === 0) return;
