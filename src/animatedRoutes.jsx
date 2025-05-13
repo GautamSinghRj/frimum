@@ -6,8 +6,10 @@ import SrcSong from "./srcsong";
 import Songs from "./songs";
 import { AnimatePresence,motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+
 function AnimatedRoutes() {
     const location = useLocation();
+    console.log(location);
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
