@@ -10,7 +10,7 @@ function Songs(){
           <Header />
           <main>
           <h1>Find Your Mood!</h1>
-          <div className="p-10 flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-28">
+          <div className="p-10 flex flex-col xl:flex-row justify-center items-center gap-10 md:gap-20 xl:gap-28">
             {moods.map((mood) => (
               <div key={mood.id} >
                 <MoodCard title={mood.title} description={mood.description} img={mood.img} />
@@ -19,7 +19,7 @@ function Songs(){
           </div>
     
           <h1 className='second_h1'>Artists To Follow.</h1>
-          <div className="artist_container">
+          <div className="flex flex-row justify-center items-center gap-12 md:gap-16 xl:gap-20">
             {artists.map((artist) => (
               <ArtistCard key={artist.id} name={artist.name} img={artist.img} />
             ))}
