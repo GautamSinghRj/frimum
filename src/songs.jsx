@@ -10,7 +10,7 @@ function Songs(){
           <Header />
           <main>
           <h1>Find Your Mood!</h1>
-          <div className="flex flex-row justify-center items-center gap-20">
+          <div className="flex flex-row justify-center items-center gap-30 p-10">
             {moods.map((mood) => (
               <div key={mood.id} >
                 <MoodCard title={mood.title} description={mood.description} img={mood.img} />
