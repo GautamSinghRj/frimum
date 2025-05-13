@@ -9,7 +9,7 @@ function Songs(){
         <div>
           <Header />
           <main>
-          <h1 className="w-full font-bebas font-black xl:translate-x-16 text-4xl md:text-4xl xl:text-4xl">Find Your Mood!</h1>
+          <h1 className="w-full font-bebas font-black translate-x-16 text-4xl md:text-4xl xl:text-4xl">Find Your Mood!</h1>
           <div className="p-10 flex flex-col md:flex-row xl:flex-row justify-center items-center gap-10 md:gap-20 xl:gap-28">
             {moods.map((mood) => (
               <div key={mood.id} >
@@ -18,7 +18,7 @@ function Songs(){
             ))}
           </div>
     
-          <h1 className='w-full font-bebas font-black xl:translate-x-16 text-4xl md:text-4xl xl:text-4xl'>Artists To Follow.</h1>
+          <h1 className='w-full font-bebas font-black translate-x-16 text-4xl md:text-4xl xl:text-4xl'>Artists To Follow.</h1>
           <div className="p-10 flex flex-row justify-center items-center flex-wrap gap-12 md:gap-16 xl:gap-20">
             {artists.map((artist) => (
               <ArtistCard key={artist.id} name={artist.name} img={artist.img} />
