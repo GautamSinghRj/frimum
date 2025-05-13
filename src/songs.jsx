@@ -9,7 +9,7 @@ function Songs(){
         <div>
           <Header />
           <main>
-          <h1 className="font-bebas font-black xl:translate-x-16 text-base md:text-2xl xl:text-4xl">Find Your Mood!</h1>
+          <h1 className="font-bebas font-black xl:translate-x-16 text-xl md:text-4xl xl:text-4xl w-3xs">Find Your Mood!</h1>
           <div className="p-10 flex flex-col md:flex-row xl:flex-row justify-center items-center gap-10 md:gap-20 xl:gap-28">
             {moods.map((mood) => (
               <div key={mood.id} >
