@@ -78,7 +78,7 @@ const stripePromise = loadStripe(paykey);
 
     return (
         <header>
-            <div className="nav_bar">
+            <div className="fixed h-96 md:h-24 xl:h-24 flex flex-col md:flex-row xl:flex-row gap-8 md:gap-24 xl:gap-24 justify-center items-center">
                 <Link to="/" className="home">
                     <img src="./pic/home.png" alt="Go to home" />
                 </Link>
@@ -109,38 +109,6 @@ const stripePromise = loadStripe(paykey);
                     alt="Login with Google"
                     onClick={loginWithGoogle}
                 />
-            </div>
-            <div className="nav_bar-mobile">
-                    <Link to="/" className="home">
-                    <img src="./pic/home.png" alt="Go to home" />
-                </Link>
-                
-                <p className="support"  onClick={handlePayment}>
-                    Support Us
-                </p>
-                    <img
-                    loading="lazy"
-                    className="login"
-                    src={userImage || "./pic/user.png"}
-                    alt="Login with Google"
-                    onClick={loginWithGoogle}
-                />
-                <Link to="/srcsong">
-                <img
-                    loading="lazy"
-                    className="search_btn"
-                    src="./pic/search.png"
-                    alt="Search button"
-                /></Link>
-                <textarea
-                    className="search"
-                    name="search"
-                    id="search"
-                    onChange={(e) => setInputValue(e.target.value)}
-                    rows={3}
-                    cols={50}
-                    placeholder="What do you want to play?"
-                ></textarea>   
             </div>
         </header>
     );
