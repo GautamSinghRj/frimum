@@ -18,8 +18,8 @@ function Songs(){
             ))}
           </div>
     
-          <h1 className='w-full font-bebas font-black xl:translate-x-16 text-4xl md:text-4xl xl:text-4xl pb-4'>Artists To Follow.</h1>
-          <div className="flex flex-row justify-center items-center flex-wrap gap-12 md:gap-16 xl:gap-20">
+          <h1 className='w-full font-bebas font-black xl:translate-x-16 text-4xl md:text-4xl xl:text-4xl'>Artists To Follow.</h1>
+          <div className="p-4 flex flex-row justify-center items-center flex-wrap gap-12 md:gap-16 xl:gap-20">
             {artists.map((artist) => (
               <ArtistCard key={artist.id} name={artist.name} img={artist.img} />
             ))}
