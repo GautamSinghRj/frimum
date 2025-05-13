@@ -10,7 +10,7 @@ function Songs(){
         <div>
           <Header />
           <main>
-          <motion.h1 whileHover={{textDecoration:underline, translateX: '16px' }}  className="w-full font-bebas font-black translate-x-16 transform text-4xl md:text-4xl xl:text-4xl">Find Your Mood!</motion.h1>
+          <motion.h1 whileHover={{textDecoration:underline}}  className="w-full font-bebas font-black translate-x-16 transform text-4xl md:text-4xl xl:text-4xl transform transition-all duration-300 ease-in-out">Find Your Mood!</motion.h1>
           <div className="p-10 flex flex-col md:flex-row xl:flex-row justify-center items-center gap-10 md:gap-20 xl:gap-28">
             {moods.map((mood) => (
               <div key={mood.id} >
