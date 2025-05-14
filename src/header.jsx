@@ -93,7 +93,8 @@ const stripePromise = loadStripe(paykey);
                 />
                 </Link>
                      <textarea
-                    className="resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-10 py-2 -translate-x-6 transform"
+                    style={{ backgroundColor: 'rgb(148, 163, 184)', color: 'white' }}
+                    className="resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-10 py-2 -translate-x-12 transform"
                     name="search"
                     id="search"
                     rows={3}
