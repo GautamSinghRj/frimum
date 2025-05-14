@@ -9,7 +9,6 @@ import { useLocation } from "react-router-dom";
 
 function AnimatedRoutes() {
     const location = useLocation();
-    console.log(location);
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -22,6 +21,7 @@ function AnimatedRoutes() {
     </AnimatePresence>
   );
 }
+
 const PageWrapper=({children})=>{
    return <motion.div
     initial={{ opacity: 0, y: 30 }}
