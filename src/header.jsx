@@ -82,7 +82,7 @@ const stripePromise = loadStripe(paykey);
              no-underline text-base bg-slate-950 text-slate-950 font-semibold font-(font-family: 'Circular', 'Circular Std', 'Gotham', 'Montserrat', sans-serif)">
                 <img className="xl:-translate-x-36 transform w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
                 <Link to="/" className="bg-gray-400 -translate-x-24 transform rounded-full">
-                    <img className="w-auto h-12 hover:scale-125 transition all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
+                    <img className="w-auto h-12 hover:scale-150 transition all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
                 </Link>
                 <Link to="/srcsong">
                 <img
