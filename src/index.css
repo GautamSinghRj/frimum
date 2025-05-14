@@ -428,12 +428,7 @@ p{
   .support:hover{
     transform:translateX(0rem)scale(1.05);
   }
-  .search {
-    transform: translateX(0rem);
-    height: 3rem; 
-    width: 22rem; 
-  }
- 
+
   .mood_container{
     display: flex;
     flex-direction: column;

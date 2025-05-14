@@ -92,8 +92,9 @@ const stripePromise = loadStripe(paykey);
                     alt="Search button"
                 />
                 </Link>
-                <textarea
-                    className="resize-none bg-stone-950 text-slate-50 text-center rounded-full truncate font-medium text-xl border-none w-80 h-12"
+                <div className="*:bg-slate-400 text-slate-50">
+                     <textarea
+                    className="resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-12"
                     name="search"
                     id="search"
                     rows={3}
@@ -101,6 +102,7 @@ const stripePromise = loadStripe(paykey);
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="What do you want to play?"
                 ></textarea>    
+                </div>
                 <p className="support"  onClick={handlePayment}>
                     Support Us
                 </p>
