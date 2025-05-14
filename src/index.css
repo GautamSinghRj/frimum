@@ -2,14 +2,6 @@
 body{
   background-color: #121212;
   color: #FFFFFF;
-  font-family: 'Circular', 'Circular Std', 'Gotham', 'Montserrat', sans-serif;
-}
-.nav_bar{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
 }
 .nav_bar a{
   text-decoration: none;
@@ -442,21 +434,9 @@ p{
   cursor: pointer;
   padding: 0.5rem 1rem;
 }
-.nav_bar-mobile{
-  display: none;
-}
+
 @media (max-width: 480px) {
-  .nav_bar-mobile{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-  }
-  .nav_bar{
-    display: none;
-  }
+
   .nav_bar-mobile .login{
     width: auto;
     height: 6vh;
