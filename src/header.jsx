@@ -87,14 +87,14 @@ const stripePromise = loadStripe(paykey);
                 <Link to="/srcsong">
                 <img
                     loading="lazy"
-                    className="relative w-auto h-12"
+                    className="relative w-auto h-8"
                     src="./pic/search.png"
                     alt="Search button"
                 />
                 </Link>
                      <textarea
-                    style={{ backgroundColor: 'rgb(148, 163, 184)', color: 'white' }}
-                    className="placeholder:text-slate-50 resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-6 py-2 transform -translate-x-16"
+                    style={{ backgroundColor: 'rgb(107, 114, 128)', color: 'white' }}
+                    className="placeholder:text-slate-50 resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-10 py-2 transform -translate-x-20"
                     name="search"
                     id="search"
                     rows={3}
