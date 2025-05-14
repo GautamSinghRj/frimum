@@ -80,7 +80,7 @@ const stripePromise = loadStripe(paykey);
         <header>
             <div className="h-0.02vh p-16 md:h-24 xl:h-24 flex flex-col md:flex-row xl:flex-row gap-8 md:gap-24 xl:gap-24 justify-center items-center
              no-underline text-base bg-slate-950 text-slate-950 font-semibold font-(font-family: 'Circular', 'Circular Std', 'Gotham', 'Montserrat', sans-serif)">
-                <img className="xl:-translate-x-36 transform w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
+                <img className="xl:transform -translate-x-36 w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
                 <Link to="/" className="bg-gray-500 backdrop-blur-md rounded-full">
                     <img className="w-auto h-12 scale-100 hover:scale-125 transform transition-all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
                 </Link>
@@ -94,7 +94,7 @@ const stripePromise = loadStripe(paykey);
                 </Link>
                      <textarea
                     style={{ backgroundColor: 'rgb(148, 163, 184)', color: 'white' }}
-                    className="resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-10 py-2 -translate-x-12 transform"
+                    className="placeholder:text-slate-50 resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-6 py-2 transform -translate-x-16"
                     name="search"
                     id="search"
                     rows={3}
