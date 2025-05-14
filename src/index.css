@@ -36,23 +36,6 @@ img.search_btn {
 .support:hover{
   transform:translateX(33.5rem)scale(1.05);
 }
-.search {
-  transform: translateX(2rem);
-  resize: none;
-  background-color: #242424;
-  border: none;
-  border-radius: 2rem;
-  text-align: center;
-  height: 3rem; 
-  width: 25rem; 
-  line-height: 3rem; 
-  color: white; 
-}
-
-.search::placeholder {
-  text-align: center;
-  color: white; 
-}
 
 p{
   font-size: 1rem;
