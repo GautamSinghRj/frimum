@@ -1,4 +1,7 @@
-
+body{
+  background-color: #121212;
+  color: white;
+}
 .nav_bar .login{
   background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px);
@@ -11,22 +14,6 @@
 .nav_bar .login:hover{
   transform:translateX(35.5rem)scale(0.9);
 }
-.home{
-  transform: translateX(2rem);
-  border-radius: 5rem;
-  transition: transform 0.2s ease;
-}
-.home:hover{
- transform:translateX(2rem)scale(1.05);
-}
-.home img{
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(10px);
-  border-radius: 5rem;
-  width: auto;
-  height: 6vh;
-}
-
 img.search_btn {
   position: relative;
   transform: translateX(5rem);
