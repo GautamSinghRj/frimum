@@ -87,13 +87,13 @@ const stripePromise = loadStripe(paykey);
                 <Link to="/srcsong">
                 <img
                     loading="lazy"
-                    className="search_btn"
+                    className="relative w-auto h-12 translate-x-6 transform "
                     src="./pic/search.png"
                     alt="Search button"
                 />
                 </Link>
                      <textarea
-                    className="!bg-slate-400 !text-slate-50 resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-12 pt-4"
+                    className="!bg-slate-400 !text-slate-50 resize-none text-center rounded-full truncate font-medium text-xl border-none w-80 h-12 py-2"
                     name="search"
                     id="search"
                     rows={3}
