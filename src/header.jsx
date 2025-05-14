@@ -93,7 +93,7 @@ const stripePromise = loadStripe(paykey);
                 />
                 </Link>
                 <textarea
-                    className="resize-none bg-zinc-600 text-slate-50 text-center rounded-full truncate font-medium border-none"
+                    className="resize-none bg-stone-950 text-slate-50 text-center rounded-full truncate font-medium text-xl border-none w-80 h-16"
                     name="search"
                     id="search"
                     rows={3}
