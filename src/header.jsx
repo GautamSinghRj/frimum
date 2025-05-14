@@ -82,7 +82,7 @@ const stripePromise = loadStripe(paykey);
              no-underline text-base bg-slate-950 text-slate-950 font-semibold font-(font-family: 'Circular', 'Circular Std', 'Gotham', 'Montserrat', sans-serif)">
                 <img className="xl:-translate-x-36 transform w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
                 <Link to="/" className="bg-gray-500 backdrop-blur-md rounded-full">
-                    <img className="w-auto h-12 scale-100 hover:scale-120 transform transition-all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
+                    <img className="w-auto h-12 scale-100 hover:scale-125 transform transition-all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
                 </Link>
                 <Link to="/srcsong">
                 <img
@@ -93,7 +93,7 @@ const stripePromise = loadStripe(paykey);
                 />
                 </Link>
                 <textarea
-                    className="resize-none bg-stone-950 text-slate-50 text-center rounded-full truncate font-medium text-xl border-none w-80 h-16"
+                    className="resize-none bg-stone-950 text-slate-50 text-center rounded-full truncate font-medium text-xl border-none w-80 h-12"
                     name="search"
                     id="search"
                     rows={3}
