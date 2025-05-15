@@ -78,7 +78,7 @@ const stripePromise = loadStripe(paykey);
 
     return (
         <header>
-            <div className="fixed top-0 left-0 h-0.02vh p-12 md:h-24 xl:h-24 flex flex-col md:flex-row xl:flex-row gap-8 md:gap-24 xl:gap-24 justify-center items-center
+            <div className="fixed top-0 left-0 z-50 h-0.02vh p-12 md:h-24 xl:h-24 flex flex-col md:flex-row xl:flex-row gap-8 md:gap-24 xl:gap-24 justify-center items-center
              no-underline text-base bg-slate-950 text-slate-950 font-semibold font-(font-family: 'Circular', 'Circular Std', 'Gotham', 'Montserrat', sans-serif)">
                 <img className="xl:transform -translate-x-36 w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
                 <Link to="/" className="bg-gray-500 backdrop-blur-md rounded-full">
