@@ -2,6 +2,28 @@ body{
   background-color: #121212;
   color: white;
 }
+  .custom-scrollbar {
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent; 
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 .nav_bar .login{
   background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px);
