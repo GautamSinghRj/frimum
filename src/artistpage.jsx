@@ -11,7 +11,11 @@ function ArtistPage({ artistName }) {
 
 
   useEffect(() => {
-    fetch(`https://frimum.onrender.com/${artist.name.split(" ")[0]}`)
+    if (!artist.name) return;
+
+    const controller = new AbortController();
+
+    fetch(`https://frimum.onrender.com/${artist.name.split(" ")[0]}`,{signal:controller.signal})
       .then((response) => response.json())
       .then((data) => {
         setFetchedState(data);
@@ -19,6 +23,7 @@ function ArtistPage({ artistName }) {
       .catch((error) => {
         console.error('Error fetching artist data:', error);
       });
+    return () => controller.abort();
   }, [artist.name]); 
   return (
     <div>

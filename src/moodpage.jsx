@@ -8,17 +8,26 @@ function MoodPage({moodTitle}) {
     const [fetched_songs, setFetchedState] = useState([]);
     const { playSong } = useContext(MusicContext);
     const mood = moods.find((m) => m.title === moodTitle); 
+useEffect(() => {
+  if (!mood.title) return;
 
-     useEffect(() => {
-        fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`)
-          .then((response) => response.json())
-          .then((data) => {
-            setFetchedState(data);
-          })
-          .catch((error) => {
-            console.error('Error fetching artist data:', error);
-          });
-      }, [mood.title]);
+  const controller = new AbortController();
+
+  fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`, {
+    signal: controller.signal
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      setFetchedState(data);
+    })
+    .catch((error) => {
+      if (error.name !== 'AbortError') {
+        console.error('Error fetching artist data:', error);
+      }
+    });
+
+  return () => controller.abort();
+}, [mood.title]);
 
   return (
     <div>
