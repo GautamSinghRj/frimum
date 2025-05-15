@@ -12,7 +12,7 @@ function MoodPage({moodTitle}) {
 useEffect(() => {
  
       if (fetchedRef.current === mood.title) return;
-    fetchedRef.current = mood.title;
+      fetchedRef.current = mood.title;
 
   fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`)
     .then((response) => response.json())

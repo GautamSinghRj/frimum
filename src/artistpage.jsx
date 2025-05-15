@@ -13,8 +13,8 @@ function ArtistPage({ artistName }) {
 
   useEffect(() => {
   
-    if (fetchedRef.current === mood.title) return;
-    fetchedRef.current = mood.title;
+    if (fetchedRef.current === artist.name) return;
+    fetchedRef.current = artist.name;
     
     fetch(`https://frimum.onrender.com/${artist.name.split(" ")[0]}`)
       .then((response) => response.json())
