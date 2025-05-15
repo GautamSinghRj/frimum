@@ -94,7 +94,7 @@ const stripePromise = loadStripe(paykey);
                      <textarea
                     style={{ backgroundColor: 'rgb(107, 114, 128)', color: 'white' }}
                     className="placeholder-white resize-none text-center rounded-full truncate font-medium text-xl border-none 
-                    w-80 h-10 py-2 transform translate-x-[-15rem]"
+                    w-80 h-10 py-2 transform translate-x-[-35rem]"
                     name="search"
                     id="search"
                     rows={3}
