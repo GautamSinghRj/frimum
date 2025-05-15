@@ -11,11 +11,7 @@ function MoodPage({moodTitle}) {
 useEffect(() => {
   if (!mood.title) return;
 
-  const controller = new AbortController();
-
-  fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`, {
-    signal: controller.signal
-  })
+  fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`)
     .then((response) => response.json())
     .then((data) => {
       setFetchedState(data);
@@ -26,7 +22,7 @@ useEffect(() => {
       }
     });
 
-  return () => controller.abort();
+
 }, [mood.title]);
 
   return (
