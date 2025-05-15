@@ -1,6 +1,6 @@
 import Footer from "./footer";
 import Header from "./header";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext,useRef } from "react";
 import { MusicContext } from "./musicplayercontext";
 import { moods } from "./data";
 
@@ -13,7 +13,7 @@ useEffect(() => {
  
       if (fetchedRef.current === mood.title) return;
     fetchedRef.current = mood.title;
-    
+
   fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`)
     .then((response) => response.json())
     .then((data) => {

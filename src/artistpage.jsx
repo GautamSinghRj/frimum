@@ -1,7 +1,7 @@
 import { artists } from "./data";
 import Header from "./header";
 import Footer from "./footer";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext,useRef } from "react";
 import { MusicContext } from "./musicplayercontext";
 
 function ArtistPage({ artistName }) {
