@@ -10,7 +10,7 @@ function Songs(){
         <div className="flex flex-col h-screen overflow-hidden">
           <Header />
           <main className="custom-scrollbar flex-1 mt-28 mb-8 overflow-y-scroll overflow-x-hidden">
-          <h1 className="w-full font-bebas font-black translate-x-16 transform text-4xl 
+          <h1 className="w-full md:w-80 xl:w-80 font-bebas font-black translate-x-16 transform text-4xl 
           md:text-4xl xl:text-4xl hover:underline transform transition-all duration-300 ease-in-out">Find Your Mood!</h1>
           <div className="p-10 flex flex-col md:flex-row xl:flex-row justify-center items-center gap-10 md:gap-20 xl:gap-28">
             {moods.map((mood) => (
@@ -20,7 +20,7 @@ function Songs(){
             ))}
           </div>
     
-          <h1 className='w-full font-bebas font-black translate-x-16 transform text-4xl 
+          <h1 className='w-full md:w-80 xl:w-80 font-bebas font-black translate-x-16 transform text-4xl 
           md:text-4xl xl:text-4xl hover:underline transform transition-all duration-300 ease-in-out'>Artists To Follow.</h1>
           <div className="pt-10 flex flex-row justify-center items-center flex-wrap gap-12 md:gap-16 xl:gap-18">
             {artists.map((artist) => (

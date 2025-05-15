@@ -7,9 +7,10 @@ import { loadStripe } from "@stripe/stripe-js";
 import { paykey } from "./paykey";
 import { useContext } from "react";
 import { MusicContext } from "./musicplayercontext";
- 
+import { useNavigate } from "react-router-dom"; 
+
 function Header() {
-   
+   const navigate = useNavigate();
 const {setInputValue} = useContext(MusicContext);
 
 const stripePromise = loadStripe(paykey); 
@@ -80,7 +81,7 @@ const stripePromise = loadStripe(paykey);
         <header>
            <div className="fixed top-0 left-0 z-40 w-full h-24 p-4 md:p-8 flex flex-col md:flex-row items-center justify-between bg-slate-950 text-white">
                 <img className="xl:transform -translate-x-36 w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
-                <Link to="/" className="transform translate-x-36 bg-gray-500 backdrop-blur-md rounded-full">
+                <Link to="/" className="transform translate-x-56 bg-gray-500 backdrop-blur-md rounded-full">
                     <img className="w-auto h-12 scale-100 hover:scale-125 transform transition-all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
                 </Link>
                 <Link to="/srcsong" className="z-50 transform translate-x-20">
@@ -94,12 +95,18 @@ const stripePromise = loadStripe(paykey);
                      <textarea
                     style={{ backgroundColor: 'rgb(107, 114, 128)', color: 'white' }}
                     className="placeholder-white resize-none text-center rounded-full truncate font-medium text-xl border-none 
-                    w-80 h-10 pl-4 py-2.5 transform -translate-x-36"
+                    w-80 h-10 pl-4 py-2 transform -translate-x-36"
                     name="search"
                     id="search"
                     rows={3}
                     cols={50}
                     onChange={(e) => setInputValue(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            e.preventDefault();
+                            navigate("/srcsong");
+                        }
+                    }}
                     placeholder="What do you want to play?"
                 ></textarea>    
                 <p className="support"  onClick={handlePayment}>
