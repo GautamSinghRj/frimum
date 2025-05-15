@@ -5,12 +5,15 @@ import { MusicContext } from "./musicplayercontext";
 import { moods } from "./data";
 
 function MoodPage({moodTitle}) {
+    const fetchedRef = useRef(null);
     const [fetched_songs, setFetchedState] = useState([]);
     const { playSong } = useContext(MusicContext);
     const mood = moods.find((m) => m.title === moodTitle); 
 useEffect(() => {
-  if (!mood.title) return;
-
+ 
+      if (fetchedRef.current === mood.title) return;
+    fetchedRef.current = mood.title;
+    
   fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`)
     .then((response) => response.json())
     .then((data) => {

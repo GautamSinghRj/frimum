@@ -5,14 +5,17 @@ import { useEffect, useState, useContext } from "react";
 import { MusicContext } from "./musicplayercontext";
 
 function ArtistPage({ artistName }) {
+  const fetchedRef = useRef(null);
   const [fetched_songs, setFetchedState] = useState([]);
   const { playSong } = useContext(MusicContext);
   const artist = artists.find((a) => a.name === artistName);
 
 
   useEffect(() => {
-    if (!artist.name) return;
-
+  
+    if (fetchedRef.current === mood.title) return;
+    fetchedRef.current = mood.title;
+    
     fetch(`https://frimum.onrender.com/${artist.name.split(" ")[0]}`)
       .then((response) => response.json())
       .then((data) => {
