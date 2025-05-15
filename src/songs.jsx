@@ -9,7 +9,7 @@ function Songs(){
     return(
         <div>
           <Header />
-          <main>
+          <main className="overflow-y-auto">
           <h1 className="w-full font-bebas font-black translate-x-16 transform text-4xl 
           md:text-4xl xl:text-4xl hover:underline transform transition-all duration-300 ease-in-out">Find Your Mood!</h1>
           <div className="p-10 flex flex-col md:flex-row xl:flex-row justify-center items-center gap-10 md:gap-20 xl:gap-28">
