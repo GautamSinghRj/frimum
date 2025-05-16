@@ -81,7 +81,7 @@ const stripePromise = loadStripe(paykey);
         <header>
            <div className="fixed top-0 left-0 z-40 w-full h-24 p-4 md:p-8 flex flex-col md:flex-row items-center justify-between bg-slate-950 text-white">
                 <img className="xl:transform -translate-x-36 w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
-                <Link to="/" className="transform translate-x-56 bg-zinc-900 backdrop-blur-md rounded-full">
+                <Link to="/" className="transform translate-x-56 backdrop-blur-md rounded-full" style={{ backgroundColor: '#1E1E1E'}}>
                     <img className="w-auto h-12 scale-100 hover:scale-125 transform transition-all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
                 </Link>
                 <Link to="/srcsong" className="z-50 transform translate-x-20">
@@ -109,8 +109,8 @@ const stripePromise = loadStripe(paykey);
                     }}
                     placeholder="What do you want to play?"
                 ></textarea> 
-                <div className="pl-8 p-2 rounded-full w-40"
-                style={{ backgroundColor: 'white', color: 'black' }}>
+                <div className="pl-8 p-2 text-slate-950 rounded-full w-40"
+                        style={{ backgroundColor: 'white'}}>
                      <p onClick={handlePayment}>
                     Support Us
                 </p>
