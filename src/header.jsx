@@ -79,12 +79,12 @@ const stripePromise = loadStripe(paykey);
 
     return (
         <header>
-           <div className="fixed top-0 left-0 z-40 w-full h-24 p-4 md:p-8 flex flex-col md:flex-row items-center justify-between bg-slate-950 text-white">
+           <div className="fixed top-0 left-0 z-40 w-full h-24 p-4 md:p-8 flex flex-col md:flex-row  gap-3 items-center justify-between bg-slate-950 text-white">
                 <img className="xl:transform -translate-x-36 w-36 md:w-64 xl:w-64 h-20" src="./pic/logo.png" alt="Logo For Frimum Music Streaming" />
-                <Link to="/" className="transform translate-x-60 rounded-full" style={{ backgroundColor: '#1E1E1E'}}>
+                <Link to="/" className="transform xl:translate-x-60 rounded-full" style={{ backgroundColor: '#1E1E1E'}}>
                     <img className="w-auto h-12 scale-100 hover:scale-125 transform transition-all duration-200 ease-in-out" src="./pic/home.png" alt="Go to home" />
                 </Link>
-                <Link to="/srcsong" className="z-50 transform translate-x-20">
+                <Link to="/srcsong" className="z-50 transform xl:translate-x-20">
                 <img
                     loading="lazy"
                     className="relative w-auto h-8"
@@ -95,7 +95,7 @@ const stripePromise = loadStripe(paykey);
                      <textarea
                     style={{ backgroundColor: '#1E1E1E', color: 'white' }}
                     className="placeholder-white resize-none text-center rounded-full truncate font-medium text-xl border-none 
-                    w-80 h-10 pl-4 py-2 transform -translate-x-36"
+                    w-80 h-10 pl-4 py-2 transform xl:-translate-x-36"
                     name="search"
                     id="search"
                     rows={3}
@@ -111,7 +111,7 @@ const stripePromise = loadStripe(paykey);
                 ></textarea> 
                   <img
                     loading="lazy"
-                    className="translate -translate-x-80 ml-2 w-12 h-12 hover:scale-110 transform transition-all duration-200 ease-in-out"
+                    className="translate xl:-translate-x-80 ml-2 w-12 h-12 hover:scale-110 transform transition-all duration-200 ease-in-out"
                     src={userImage || "./pic/user.png"}
                     alt="Login with Google"
                     onClick={loginWithGoogle}
