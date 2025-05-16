@@ -1,38 +1,4 @@
 
-.nav_bar .login{
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(10px);
-  border-radius: 5rem;
-  transform: translateX(35.5rem);
-  width: auto;
-  height: 6vh;
-  transition: transform 0.2s ease;
-}
-.nav_bar .login:hover{
-  transform:translateX(35.5rem)scale(0.9);
-}
-img.search_btn {
-  position: relative;
-  transform: translateX(5rem);
-  width: auto;
-  height: 4vh;
-  cursor: pointer;
-  z-index: 100;
-  display: block;
-}
-.support{
-  transform: translateX(33.5rem);
-  background-color: #FFFFFF;
-  color: #0A0A0A;
-  font-weight: bolder;
-  border-radius: 2rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease;
-}
-.support:hover{
-  transform:translateX(33.5rem)scale(1.05);
-}
 
 p{
   font-size: 1rem;
@@ -394,46 +360,6 @@ p{
 
 @media (max-width: 480px) {
 
-  .nav_bar-mobile .login{
-    width: auto;
-    height: 6vh;
-  }
-  .home{
-    transform: translateX(0rem);
-    border-radius: 5rem;
-    transition: transform 0.2s ease;
-  }
-  .home:hover{
-   transform:translateX(0rem)scale(1.05);
-  }
-  .home img{
-    border-radius: 5rem;
-    width: auto;
-    height: 6vh;
-  }
-  img.search_btn {
-    position: absolute;
-    transform: translate(-5rem,2.7rem);
-    width: auto;
-    height: 4vh;
-    z-index: 101; 
-  }
-  .support{
-    transform: translateX(0rem);
-    transition: all 0.2s ease;
-  }
-  .support:hover{
-    transform:translateX(0rem)scale(1.05);
-  }
-
-  .mood_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-    flex-wrap: wrap;
-    gap: 3rem;
-  }
   .moods {
     width: auto;
     min-height: 80vw;
