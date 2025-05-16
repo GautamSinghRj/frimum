@@ -108,10 +108,13 @@ const stripePromise = loadStripe(paykey);
                         }
                     }}
                     placeholder="What do you want to play?"
-                ></textarea>    
-                <p className="support"  onClick={handlePayment}>
+                ></textarea> 
+                <div className="pl-8 p-2 rounded-full w-40"
+                style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}>
+                     <p onClick={handlePayment}>
                     Support Us
                 </p>
+                 </div>   
                 <img
                     loading="lazy"
                     className="login"
