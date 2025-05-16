@@ -109,9 +109,9 @@ const stripePromise = loadStripe(paykey);
                     }}
                     placeholder="What do you want to play?"
                 ></textarea> 
-                <div className="pl-8 p-2 text-slate-950 rounded-full w-40"
-                        style={{ backgroundColor: 'white'}}>
-                     <p onClick={handlePayment}>
+                <div className="supp p-2 text-center rounded-full w-40 scale-100 hover:scale-110 transform transition-all duration-200 ease-in-out"
+                        style={{ backgroundColor: 'white',}}>
+                     <p onClick={handlePayment} style={{ cursor: 'pointer', color:'black' }} className="font-extrabold">
                     Support Us
                 </p>
                  </div>   
