@@ -46,10 +46,10 @@ function View() {
   }
   const imagUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdl-MOe4x_1-wpxRkxJJ6NjjkzeLR2v8BCQ&s";
   return (
-     <div className="w-full h-screen flex flex-row justify-center items-center gap-4">
+     <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
       <span className="song_img"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
       <span className="song_name" title={currentSong}>{currentSong}</span>
-      <span><Link to="/view"><img loading="lazy" src="./pic/fullscreen.png" alt="Watch In fullscreen"/></Link></span>
+        <span className="flex flex-row">
         <img
           className=""
           src={shuffle ? shuffleIcon[1].img : shuffleIcon[0].img}
@@ -80,6 +80,8 @@ function View() {
           alt="Repeat"
           onClick={toggleLoop}
         />
+        
+        </span>
         <span className="start_len">{!aud?"0:00":formatTime(currentTime)}</span>
          <div className="progress_bar">
           <div className="progress_fill" style={{ width: `${calpercent()}%` }}></div>
