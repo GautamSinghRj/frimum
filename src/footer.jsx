@@ -49,7 +49,7 @@ function Footer() {
 
   return (
     <footer>
-      <div className="bg-gradient-to-r from-[#0c0c0c] via-[#141d28] to-[#1b2735] w-full h-24 flex flex-row justify-center items-center gap-4">
+      <div className="custom-footer w-full h-24 flex flex-row justify-center items-center gap-4">
       <span className="song_img"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
       <span className="song_name" title={currentSong}>{currentSong}</span>
       <span><Link to="/view"><img loading="lazy" src="./pic/fullscreen.png" alt="Watch In fullscreen"/></Link></span>
