@@ -49,7 +49,7 @@ function Footer() {
 
   return (
     <footer>
-      <div className="music_controls">
+      <div className="w-full h-24 flex flex-row justify-center items-center gap-4">
       <span className="song_img"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
       <span className="song_name" title={currentSong}>{currentSong}</span>
 
