@@ -52,7 +52,7 @@ function Footer() {
       <div className="bg-gradient-to-r from-[#0c0c0c] via-[#141d28] to-[#1b2735] w-full h-24 flex flex-row justify-center items-center gap-4">
       <span className="song_img"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
       <span className="song_name" title={currentSong}>{currentSong}</span>
-      <span><img loading="lazy" src="./public/fullscreen.png" alt="Watch In fullscreen"/></span>
+      <span><Link to="/view"><img loading="lazy" src="./pic/fullscreen.png" alt="Watch In fullscreen"/></Link></span>
         <img
           className="shuffle"
           src={shuffle ? shuffleIcon[1].img : shuffleIcon[0].img}

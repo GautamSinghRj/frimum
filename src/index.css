@@ -81,16 +81,6 @@ p{
   opacity: 1;
   transition: opacity 0.2s ease;
 }
-.music_controls {
-  width: 100%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  height: 7vh;
-  background: #0A0A0A;
-  padding: 1rem 0;
-}
 
 .play{
   background: rgba(255, 255, 255, 0.1); 
