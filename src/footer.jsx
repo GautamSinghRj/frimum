@@ -1,7 +1,7 @@
 import { useState,useEffect, useContext } from "react";
 import { MusicContext } from "./musicplayercontext"; 
 import { toggle, repeat, shuffle as shuffleIcon } from './data.js';
-
+import { Link } from "react-router-dom";
 
 function Footer() {
   const {
