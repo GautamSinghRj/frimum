@@ -47,7 +47,7 @@ function View() {
   const imagUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdl-MOe4x_1-wpxRkxJJ6NjjkzeLR2v8BCQ&s";
   return (
      <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
-      <span className="w-96 h-96 rounded-2xl"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
+      <span><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" className="w-96 h-96 rounded-3xl" /></span>
       <span className="song_name" title={currentSong}>{currentSong}</span>
         <span className="flex flex-row">
         <img
