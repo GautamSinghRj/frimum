@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { MusicContext } from "./musicplayercontext";
 import { toggle, repeat, shuffle as shuffleIcon } from './data.js';
-import ColorThief from './home/gautam/music_app/node_modules/colorthief/dist/color-thief.mjs';
+import ColorThief from 'color-thief-browser';
+
 
 
 function View() {
