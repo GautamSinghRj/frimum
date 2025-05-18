@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { MusicContext } from "./musicplayercontext";
 import { toggle, repeat, shuffle as shuffleIcon } from './data.js';
 import ColorThief from "color-thief";
-import "./View.css"; // if needed
+
 
 function View() {
   const {
