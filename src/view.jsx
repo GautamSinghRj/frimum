@@ -83,11 +83,11 @@ function View() {
         
         </span>
         <span className="flex flex-row">
-        <div className="start_len">{!aud?"0:00":formatTime(currentTime)}</div>
+        <span className="start_len">{!aud?"0:00":formatTime(currentTime)}</span>
          <div className="progress_bar">
           <div className="progress_fill" style={{ width: `${calpercent()}%` }}></div>
         </div>
-        <div className="end_len">{duration}</div>
+        <span className="end_len">{duration}</span>
         </span>
       </div>
   );
