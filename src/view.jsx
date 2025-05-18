@@ -86,8 +86,8 @@ function View() {
         </span>
         <span className="flex flex-row justify-center items-center gap-4">
           <span className="text-base">{!aud?"0:00":formatTime(currentTime)}</span>
-          <div className="w-96 h-2">
-            <div className="h-full transform scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transition-all duration-300 rounded-full" style={{ width: `${calpercent()}%` }}></div>
+          <div className="w-96 h-2 bg-green-400 rounded-full">
+            <div className="h-full transform hover:scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transition-all duration-300 rounded-full" style={{ width: `${calpercent()}%` }}></div>
           </div>
           <span className="text-base">{duration}</span>
         </span>
