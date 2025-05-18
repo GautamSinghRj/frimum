@@ -48,10 +48,10 @@ function View() {
   const imagUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdl-MOe4x_1-wpxRkxJJ6NjjkzeLR2v8BCQ&s";
   return (
     <main>
-      <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
+      <div className="w-full h-screen flex flex-col justify-center items-center gap-8">
       <span><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" className="w-96 h-96 rounded-3xl" /></span>
       <span className="text-6xl font-black font-serif" title={currentSong}>{currentSong}</span>
-        <span className="flex flex-row">
+        <span className="flex flex-row transform hover:scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600">
         <img
           className="w-12 h-12"
           src={shuffle ? shuffleIcon[1].img : shuffleIcon[0].img}
@@ -86,7 +86,7 @@ function View() {
         </span>
         <span className="flex flex-row justify-center items-center gap-4">
           <span className="text-base">{!aud?"0:00":formatTime(currentTime)}</span>
-          <div className="w-96 h-2 bg-green-400 rounded-full">
+          <div className="w-72 xl:w-96 h-2 bg-green-300 rounded-full">
             <div className="h-full transform hover:scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transition-all duration-300 rounded-full" style={{ width: `${calpercent()}%` }}></div>
           </div>
           <span className="text-base">{duration}</span>
