@@ -84,11 +84,13 @@ function View() {
         />
         
         </span>
-        <span className="start_len">{!aud?"0:00":formatTime(currentTime)}</span>
-         <div className="progress_bar">
-          <div className="progress_fill" style={{ width: `${calpercent()}%` }}></div>
-        </div>
-        <span className="end_len">{duration}</span>
+        <span className="flex flex-row justify-center items-center gap-4">
+          <span className="text-base">{!aud?"0:00":formatTime(currentTime)}</span>
+          <div className="w-96 h-2">
+            <div className="h-full transform scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transition-all duration-300 rounded-full" style={{ width: `${calpercent()}%` }}></div>
+          </div>
+          <span className="text-base">{duration}</span>
+        </span>
       </div>
     </main>
   );
