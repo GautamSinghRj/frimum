@@ -2,6 +2,7 @@ import { useState,useEffect, useContext } from "react";
 import { MusicContext } from "./musicplayercontext"; 
 import { toggle, repeat, shuffle as shuffleIcon } from './data.js';
 import { Link } from "react-router-dom";
+import { main } from "framer-motion/client";
 function View() {
      const {
     aud,
@@ -46,50 +47,50 @@ function View() {
   }
   const imagUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdl-MOe4x_1-wpxRkxJJ6NjjkzeLR2v8BCQ&s";
   return (
-     <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
+    <main>
+      <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
       <span><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" className="w-96 h-96 rounded-3xl" /></span>
-      <span className="song_name" title={currentSong}>{currentSong}</span>
+      <span className="text-6xl font-black font-serif" title={currentSong}>{currentSong}</span>
         <span className="flex flex-row">
         <img
-          className="w-16 h-16"
+          className="w-12 h-12"
           src={shuffle ? shuffleIcon[1].img : shuffleIcon[0].img}
           alt="Shuffle"
           onClick={toggleShuffle}
         />
         <img
-          className="w-16 h-16"
+          className="w-12 h-12"
           src="./pic/previous.png"
           alt="Previous"
           onClick={playPreviousSong}
         />
         <img
-          className="w-16 h-16"
+          className="w-12 h-12"
           src={isPlaying ? toggle[1].img : toggle[0].img}
           alt={isPlaying ? "Pause" : "Play"}
           onClick={togglePlay}
         />
         <img
-          className="w-16 h-16"
+          className="w-12 h-12"
           src="./pic/next.png"
           alt="Next"
           onClick={playNextSong}
         />
         <img
-          className="w-16 h-16"
+          className="w-12 h-12"
           src={loop ? repeat[1].img : repeat[0].img}
           alt="Repeat"
           onClick={toggleLoop}
         />
         
         </span>
-        <span className="flex flex-row">
         <span className="start_len">{!aud?"0:00":formatTime(currentTime)}</span>
          <div className="progress_bar">
           <div className="progress_fill" style={{ width: `${calpercent()}%` }}></div>
         </div>
         <span className="end_len">{duration}</span>
-        </span>
       </div>
+    </main>
   );
 }
 export default View;
