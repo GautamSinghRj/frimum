@@ -47,35 +47,35 @@ function View() {
   const imagUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdl-MOe4x_1-wpxRkxJJ6NjjkzeLR2v8BCQ&s";
   return (
      <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
-      <span className="song_img"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
+      <span className="w-96 h-96 rounded-2xl"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
       <span className="song_name" title={currentSong}>{currentSong}</span>
         <span className="flex flex-row">
         <img
-          className=""
+          className="w-16 h-16"
           src={shuffle ? shuffleIcon[1].img : shuffleIcon[0].img}
           alt="Shuffle"
           onClick={toggleShuffle}
         />
         <img
-          className=""
+          className="w-16 h-16"
           src="./pic/previous.png"
           alt="Previous"
           onClick={playPreviousSong}
         />
         <img
-          className=""
+          className="w-16 h-16"
           src={isPlaying ? toggle[1].img : toggle[0].img}
           alt={isPlaying ? "Pause" : "Play"}
           onClick={togglePlay}
         />
         <img
-          className=""
+          className="w-16 h-16"
           src="./pic/next.png"
           alt="Next"
           onClick={playNextSong}
         />
         <img
-          className=""
+          className="w-16 h-16"
           src={loop ? repeat[1].img : repeat[0].img}
           alt="Repeat"
           onClick={toggleLoop}
