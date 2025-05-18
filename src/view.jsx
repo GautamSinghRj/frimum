@@ -51,7 +51,7 @@ function View() {
       <div className="w-full h-screen flex flex-col justify-center items-center gap-8">
       <span><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" className="w-96 h-96 rounded-3xl" /></span>
       <span className="text-6xl font-black font-serif" title={currentSong}>{currentSong}</span>
-        <span className="flex flex-row transform hover:scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600">
+        <span className="flex flex-row transform hover:scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transition-all duration-300 rounded-full p-2">
         <img
           className="w-12 h-12"
           src={shuffle ? shuffleIcon[1].img : shuffleIcon[0].img}
