@@ -49,45 +49,46 @@ function Footer() {
 
   return (
     <footer>
-      <div className="custom-footer w-full h-24 flex flex-row justify-center items-center gap-4">
+      <div className="custom-footer w-full h-24 flex flex-row justify-center items-center gap-2">
       <span className="song_img"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
       <span className="song_name" title={currentSong}>{currentSong}</span>
       <span><Link to="/view"><img loading="lazy" src="./pic/fullscreen.png" alt="Watch In fullscreen"/></Link></span>
         <img
-          className="shuffle"
+          className="w-12 h-12 transform hover:scale(105) transition-all duration-300"
           src={shuffle ? shuffleIcon[1].img : shuffleIcon[0].img}
           alt="Shuffle"
           onClick={toggleShuffle}
         />
         <img
-          className="previous"
+          className="w-12 h-12 transform hover:scale(90) transition-all duration-300"
           src="./pic/previous.png"
           alt="Previous"
           onClick={playPreviousSong}
         />
         <img
-          className="play"
+          className="w-12 h-12 rounded-full transform hover:scale(105) transition-all duration-300"
           src={isPlaying ? toggle[1].img : toggle[0].img}
           alt={isPlaying ? "Pause" : "Play"}
           onClick={togglePlay}
+          style={{ backgroundColor: 'gray' }}
         />
         <img
-          className="next"
+          className="w-12 h-12 transform hover:scale(90) transition-all duration-300"
           src="./pic/next.png"
           alt="Next"
           onClick={playNextSong}
         />
         <img
-          className="repeat"
+          className="w-12 h-12 transform hover:scale(105) transition-all duration-300"
           src={loop ? repeat[1].img : repeat[0].img}
           alt="Repeat"
           onClick={toggleLoop}
         />
-        <span className="start_len">{!aud?"0:00":formatTime(currentTime)}</span>
-         <div className="progress_bar">
-          <div className="progress_fill" style={{ width: `${calpercent()}%` }}></div>
+        <span className="text-base" style={{translate: '22rem'}}>{!aud?"0:00":formatTime(currentTime)}</span>
+         <div className="hidden xl:inline xl:w-96 h-2 bg-green-300 rounded-full" style={{translate: '22rem'}}>
+          <div className="h-full transform hover:scale-105 bg-gradient-to-r from-green-400 via-green-500 to-green-600 transition-all duration-300 rounded-full" style={{ width: `${calpercent()}%` }}></div>
         </div>
-        <span className="end_len">{duration}</span>
+        <span className="text-base" style={{translate: '22rem'}}>{duration}</span>
       </div>
     </footer>
   );

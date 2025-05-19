@@ -81,60 +81,6 @@ p{
   opacity: 1;
   transition: opacity 0.2s ease;
 }
-
-.play{
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(10px);
-  border-radius: 5rem;
-  width: auto;
-  height: 4vh;
-  cursor: pointer;
-  transform: translateX(5rem);
-  transition: transform 0.2s ease;
-}
-.play:hover{
-  transform:translateX(5rem)scale(1.05);
-}
-.next{
-  width: auto;
-  height: 4vh;
-  cursor: pointer;
-  transform: translateX(5rem);
-  transition: transform 0.2s ease;
-}
-.next:hover{
-  transform:translateX(5rem)scale(0.9);
-}
-.previous{
-  width: auto;
-  height: 4vh;
-  cursor: pointer;
-  transform: translateX(5rem);
-  transition: transform 0.2s ease;
-}
-.previous:hover{
-  transform:translateX(5rem)scale(0.9);
-}
-.shuffle{
-  width: auto;
-  height: 4vh;
-  cursor: pointer;
-  transform: translateX(5rem);
-  transition: transform 0.2s ease;
-}
-.shuffle:hover{
-  transform:translateX(5rem)scale(1.05);
-}
-.repeat{
-  width: auto;
-  height: 4vh;
-  cursor: pointer;
-  transform: translateX(5rem);
-  transition: transform 0.2s ease;
-}
-.repeat:hover{
-  transform:translateX(5rem)scale(1.05);  
-}
 .player {
   width: 100%;
   max-width: 500px;
@@ -244,32 +190,6 @@ p{
   height: 8vh;
   border-radius: 20%;
   transform: translate(-24rem,0.15rem);
-}
-.progress_bar {
-  width: 20%;
-  height: 0.75vh;
-  background-color: #333;
-  border-radius: 1.5rem;
-  transform: translateX(22rem);
-}
-.progress_fill {
-  height: 100%;
-  background: linear-gradient(90deg, #5A6A6A, #6A7A7A);
-  border-radius: 1.5rem;
-  transition: width 0.3s ease;
-}
-.progress_bar:hover .progress_fill {
-  transform: scaleY(1.05); 
-}
-.start_len{
-  color: #ccc;
-  font-size: 0.9rem;
-  transform: translateX(22rem);
-}
-.end_len{
-  color: #ccc;
-  font-size: 0.9rem; 
-  transform: translateX(22rem);
 }
 .song_name {
   width: 12vw; 
