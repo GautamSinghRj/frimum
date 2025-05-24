@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "stripe.api.secret.key",
+    "type": "java.lang.String",
+    "description": "A description for 'stripe.api.secret.key'"
+  },
+  {
+    "name": "stripe.api.publishable.key",
+    "type": "java.lang.String",
+    "description": "A description for 'stripe.api.publishable.key'"
+  }
+]}

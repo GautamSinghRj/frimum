@@ -1,0 +1,1 @@
+export const paykey="pk_test_51RHlcmPKbCNhIoGDZGtnZKvVBtj0DNK5nr89h6BKIgxJNeAcC1eMPPD1NihCmxYTPFmKnCz0mseyZIbkhzOEcUGh00Dp3YVauu";
