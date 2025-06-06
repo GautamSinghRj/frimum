@@ -7,6 +7,7 @@ import Songs from "./songs";
 import { AnimatePresence,motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import View from "./view";
+import Auth from "./auth";
 
 function AnimatedRoutes() {
     const location = useLocation();
@@ -19,6 +20,7 @@ function AnimatedRoutes() {
         <Route path="/failed" element={<PageWrapper><Failed /></PageWrapper>} />
         <Route path="/srcsong" element={<PageWrapper><SrcSong /></PageWrapper>} />
         <Route path="/view" element={<PageWrapper><View /></PageWrapper>} />
+        <Route path="/auth" element={<PageWrapper><Auth /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );

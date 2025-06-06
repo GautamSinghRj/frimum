@@ -33,50 +33,6 @@ const stripePromise = loadStripe(paykey);
     }}
   
 
-    const [userImage, setUserImage] = useState(null);
-
-    useEffect(() => {
-        const checkUser = async () => {
-            const storedUser = JSON.parse(localStorage.getItem("musicUser"));
-            if (storedUser) {
-                setUserImage(storedUser.photoURL);
-                return;
-            }
-
-            try {
-                const result = await getRedirectResult(auth);
-                if (result && result.user) {
-                    const user = result.user;
-
-                    const response = await fetch("https://frimum.onrender.com/login", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            email: user.email,
-                            name: user.displayName,
-                            imgurl: user.photoURL,
-                        }),
-                    });
-
-                    const userData = {
-                        email: user.email,
-                        name: user.displayName,
-                        photoURL: user.photoURL,
-                    };
-
-                    localStorage.setItem("musicUser", JSON.stringify(userData));
-                    setUserImage(user.photoURL);
-                }
-            } catch (err) {
-                console.error("Error getting redirect result:", err);
-            }
-        };
-
-        checkUser();
-    }, []);
-
     return (
         <header>
            <div className="fixed top-0 left-0 z-40 w-full h-24 p-4 md:p-8 flex flex-col md:flex-row  gap-4 items-center justify-between bg-slate-950 text-white">
@@ -109,13 +65,14 @@ const stripePromise = loadStripe(paykey);
                     }}
                     placeholder="What do you want to play?"
                 ></textarea> 
-                  <img
+                <Link to="/auth">
+                 <img
                     loading="lazy"
                     className="transform -translate-y-8 xl:-translate-y-0 xl:-translate-x-80 ml-2 w-12 h-12 hover:scale-110 transform transition-all duration-200 ease-in-out"
-                    src={userImage || "./pic/user.png"}
-                    alt="Login with Google"
-                    onClick={loginWithGoogle}
+                    src="./pic/user.png"
+                    alt="Login or Sign Up"
                 />
+                </Link>
                 <div className="transform -translate-y-8 xl:translate-y-0 p-2 text-center rounded-full w-40 scale-100 hover:scale-110 transform transition-all duration-200 ease-in-out"
                         style={{ backgroundColor: 'white',}}>
                      <p onClick={handlePayment} style={{ cursor: 'pointer', color:'black' }} className="font-extrabold">
