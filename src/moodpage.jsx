@@ -14,7 +14,7 @@ useEffect(() => {
       if (fetchedRef.current === mood.title) return;
       fetchedRef.current = mood.title;
 
-  fetch(`https://frimum.onrender.com/${mood.title.split(" ")[0]}`)
+  fetch(`https://frimum.onrender.com/api/${mood.title.split(" ")[0]}`)
     .then((response) => response.json())
     .then((data) => {
       setFetchedState(data);

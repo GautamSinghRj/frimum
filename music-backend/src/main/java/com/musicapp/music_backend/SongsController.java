@@ -1,4 +1,4 @@
-			package com.musicapp.music_backend;
+package com.musicapp.music_backend;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.musicapp.music_backend.entities.AR_rahman;
@@ -52,6 +53,7 @@ import com.musicapp.music_backend.repo.Udit_repo;
 import com.musicapp.music_backend.repo.Weekend_repo;
 		
 @RestController
+@RequestMapping("/api")
 public class SongsController {
 	
 	@Autowired

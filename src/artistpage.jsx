@@ -16,7 +16,7 @@ function ArtistPage({ artistName }) {
     if (fetchedRef.current === artist.name) return;
     fetchedRef.current = artist.name;
     
-    fetch(`https://frimum.onrender.com/${artist.name.split(" ")[0]}`)
+    fetch(`https://frimum.onrender.com/api/${artist.name.split(" ")[0]}`)
       .then((response) => response.json())
       .then((data) => {
         setFetchedState(data);

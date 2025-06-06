@@ -2,11 +2,10 @@ import Footer from "./footer";
 import Header from "./header";
 import { useContext, useState, useEffect } from "react";
 import { MusicContext } from "./musicplayercontext";
-import { key } from "./key";
+
 
 function SrcSong() {
     const { playSong, inputValue } = useContext(MusicContext);
-    const [sugg_songs, setSugg] = useState(null);
     const [song, setSong] = useState(null);
     const [image, setImage] = useState(null);
 
@@ -15,7 +14,7 @@ function SrcSong() {
 
         const postInputChange = async () => {
             try {
-                const res = await fetch("https://frimum.onrender.com/Song", {
+                const res = await fetch("https://frimum.onrender.com/api/Song", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -35,63 +34,13 @@ function SrcSong() {
                 const data = await response.json();
 
                 const baseimg = data.results?.[0]?.artworkUrl100?.replace('100x100', '1200x1200');
-                if (baseimg) setImage(baseimg);
-
-                const response2 = await fetch('https://frimum.onrender.com/getSong');
-                if (!response2.ok) return;
-
-                const playlist = await response2.json();
-
-                const suggestion = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                    method: "POST",
-                    headers: {
-                        Authorization: "Bearer " + key,
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        model: "mistralai/mistral-small-3.1-24b-instruct:free",
-                        messages: [
-                            {
-                                role: "system",
-                                content:
-                                    "You are a music recommender. Suggest three alike songs according to the mood and vibe of the song from the given song. Respond ONLY with the full song object from the playlist in JSON format.",
-                            },
-                            {
-                                role: "user",
-                                content: `Playlist: ${JSON.stringify(playlist)}. Current song: ${JSON.stringify(
-                                    songData.name
-                                )}. Recommend and return three songs object from the list.`,
-                            },
-                        ],
-                    }),
-                });
-
-                const result = await suggestion.json();
-                console.log(result);
-                const rawContent = result.choices?.[0]?.message?.content?.trim();
-                if (!rawContent) return;
-
-                const cleanedContent = rawContent
-                    .replace(/```json|```/g, "")
-                    .replace(/,\s*}/g, "}")
-                    .replace(/,\s*]/g, "]")
-                    .trim();
-
-                try {
-                    const parsed = JSON.parse(cleanedContent);
-                    if (Array.isArray(parsed)) {
-                        setSugg(parsed);
-                    } else {
-                        console.warn("Suggestions were not an array:", parsed);
-                    }
-                } catch (e) {
-                    console.error("Failed to parse suggestions:", e);
-                }
-            } catch (error) {
-                console.error("Error fetching song data:", error);
+                if (baseimg) setImage(baseimg);;
             }
-        };
-        console.log(sugg_songs);
+                catch (error) {
+                console.error("Error fetching song data:", error);
+                setSong(null);
+                setImage(null);
+            }}
         postInputChange();
     }, [inputValue]);
 
