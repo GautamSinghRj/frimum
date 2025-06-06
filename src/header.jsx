@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { loginWithGoogle } from "./login";
-import { auth } from "./firebase";
-import { getRedirectResult } from "firebase/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import { paykey } from "./paykey";
 import { useContext } from "react";
