@@ -74,7 +74,7 @@ const Auth = () => {
         <div className="bg-white rounded-lg shadow-md p-8">
           <div className="mb-6">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
-              {mode === 'login' ? 'Login to Music Stream' : 'Create Account'}
+              {mode === 'login' ? 'Login to Frimum' : 'Create Account'}
             </h2>
             
             <div className="flex bg-gray-100 rounded-lg p-1">
