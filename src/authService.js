@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'https://frimum.onrender.com/api';
 
 
 const api = axios.create({
@@ -43,7 +43,7 @@ export const authService = {
 
   login: async (username, password) => {
     try {
-      const response = await api.post('/auth/login', {
+      const response = await api.post('/login', {
         username,
         password,
       });
@@ -62,7 +62,7 @@ export const authService = {
 
   register: async (username, password, email, fullName) => {
     try {
-      const response = await api.post('/auth/register', {
+      const response = await api.post('/register', {
         username,
         password,
         email,
@@ -104,7 +104,7 @@ export const authService = {
 
   validateToken: async () => {
     try {
-      const response = await api.get('/auth/validate');
+      const response = await api.get('/validate');
       return response.data;
     } catch (error) {
       throw error.response?.data || 'Token validation failed';
