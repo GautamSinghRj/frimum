@@ -29,7 +29,7 @@ useEffect(() => {
 }, [mood.title]);
 
   return (
-    <div>
+   <div className="flex flex-col h-screen overflow-hidden">
       <Header />
       <main className="custom-scrollbar flex-1 mt-96 md:mt-28 xl:mt-28 overflow-y-scroll overflow-x-hidden">
         <div className="moodpage_section" style={{backgroundColor: mood ? mood.color : "#fff"}}>
