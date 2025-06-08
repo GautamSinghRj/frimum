@@ -127,6 +127,7 @@ const Auth = () => {
                 value={formData.username}
                 onChange={handleChange}
                 required
+                style={{ color: 'black' }}
                 disabled={loading}
                 placeholder="Enter your username"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm black focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
@@ -144,6 +145,7 @@ const Auth = () => {
                 value={formData.password}
                 onChange={handleChange}
                 required
+                style={{ color: 'black' }}
                 disabled={loading}
                 placeholder="Enter your password"
                 minLength="6"
@@ -164,6 +166,7 @@ const Auth = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    style={{ color: 'black' }}
                     disabled={loading}
                     placeholder="Enter your email"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm black focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
