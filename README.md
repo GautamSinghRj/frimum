@@ -8,7 +8,7 @@ Frimum is a cloud-based music streaming player, similar to Spotify, designed to 
 - **Create Playlists**: Build and manage your personalized playlists.
 - **Recommendations**: Get music suggestions tailored to your taste.
 - **Responsive Design**: Enjoy Frimum on any device.
-- **Offline Mode**: Yes
+- **Offline Mode**: No
 
 ## Technologies Used
 
