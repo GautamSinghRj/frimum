@@ -50,8 +50,8 @@ function Footer() {
   return (
     <footer>
       <div className="custom-footer w-full h-24 flex flex-row justify-center items-center gap-2">
-      <span className="song_img"><img src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
-      <span className="song_name" title={currentSong}>{currentSong}</span>
+      <span className="w-20 h-20 transform -translate-x-96"><img className="rounded-xl" src={imageUrl==null?imagUrl:imageUrl} alt="The song" /></span>
+      <span className="overflow-hidden inline-black font-black text-ellipsis whitespace-nowrap transform -translate-x-80" title={currentSong}>{currentSong}</span>
       <span><Link to="/view"><img loading="lazy" src="./pic/fullscreen.png" alt="Watch In fullscreen"/></Link></span>
         <img
           className="w-12 h-12 transform hover:scale(105) transition-all duration-300"
