@@ -31,7 +31,7 @@ useEffect(() => {
   return (
     <div>
       <Header />
-      <main>
+      <main className="custom-scrollbar flex-1 mt-96 md:mt-28 xl:mt-28 overflow-y-scroll overflow-x-hidden">
         <div className="moodpage_section" style={{backgroundColor: mood ? mood.color : "#fff"}}>
         {mood ? (
           <img loading="lazy" className="indivual_img" src={mood.img} alt={mood.title} />
