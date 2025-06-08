@@ -8,8 +8,7 @@ const Auth = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
-    email: '',
-    fullName: '',
+    email: ''
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -40,14 +39,13 @@ const Auth = () => {
         response = await authService.register(
           formData.username, 
           formData.password, 
-          formData.email, 
-          formData.fullName
+          formData.email
         );
       }
 
       setSuccess(response.message || 'Success!');
       setTimeout(() => {
-        navigate('/dashboard');
+        navigate('/');
       }, 1000);
     } catch (err) {
       const errorMessage = typeof err === 'string' ? err : 'Operation failed. Please try again.';
@@ -131,7 +129,7 @@ const Auth = () => {
                 required
                 disabled={loading}
                 placeholder="Enter your username"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm black focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
             
@@ -149,7 +147,7 @@ const Auth = () => {
                 disabled={loading}
                 placeholder="Enter your password"
                 minLength="6"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm black focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
             
@@ -168,26 +166,9 @@ const Auth = () => {
                     required
                     disabled={loading}
                     placeholder="Enter your email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm black focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
                   />
                 </div>
-                
-                <div>
-                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name <span className="text-gray-400">(Optional)</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    disabled={loading}
-                    placeholder="Enter your full name"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
-                  />
-                </div>
-              </>
             )}
             
             <button 
