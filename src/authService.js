@@ -65,8 +65,7 @@ export const authService = {
       const response = await api.post('/register', {
         username,
         password,
-        email,
-        fullName,
+        email
       });
 
       if (response.data.token) {
