@@ -34,13 +34,13 @@ useEffect(() => {
       <main className="custom-scrollbar flex-1 mt-96 md:mt-28 xl:mt-28 overflow-y-scroll overflow-x-hidden">
         <div className="moodpage_section" style={{backgroundColor: mood ? mood.color : "#fff"}}>
         {mood ? (
-          <img loading="lazy" className="indivual_img" src={mood.img} alt={mood.title} />
+          <img loading="lazy" className="w-auto h-80 rounded-xl float-left transform translate-x-6" src={mood.img} alt={mood.title} />
         ) : (
           <p>Mood not found</p>
         )}
-          <p className="description">Public Playlist</p>
-          <p className="mood_heading">{mood.title}</p>
-          <p className="artist_info">multiple artists</p>
+          <p className="text-white italic font-medium text-2xl transform translate-x-28 translate-y-40">Public Playlist</p>
+          <p className="text-white text-8xl transform translate-x-24">{mood.title}</p>
+          <p className="text-white italic font-medium text-2xl transform translate-x-28 translate-y-20">multiple artists</p>
         </div>
 
         <div className="songs_table">
