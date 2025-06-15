@@ -51,17 +51,17 @@ function SrcSong() {
                 {song && (
                     <>
                         {image && (
-                            <img src={image} alt="Searched Song" className="searched_song_img" />
+                            <img src={image} alt="Searched Song ml-96 mb-24" className="searched_song_img" />
                         )}
                         <h1
                             onClick={() =>
                                 playSong(song.link, song.id, song.name, song, song.length)
                             }
-                            className="searched_song_name"
+                            className="searched_song_name mb-8 transition duration-100 ease-in-out hover:underline"
                         >
                             {song.name}
                         </h1>
-                        <p className="searched_song_len">{song.length}</p>
+                        <p className="searched_song_len mb-12">{song.length}</p>
                     </>
                 )}
             </main>
