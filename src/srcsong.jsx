@@ -47,7 +47,7 @@ function SrcSong() {
     return (
         <div>
             <Header />
-            <main>
+            <main className="custom-scrollbar flex-1 mt-96 md:mt-28 xl:mt-28 overflow-y-scroll overflow-x-hidden">
                 {song && (
                     <>
                         {image && (
