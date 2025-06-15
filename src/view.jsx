@@ -71,7 +71,7 @@ function View() {
   const fallbackImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfdl-MOe4x_1-wpxRkxJJ6NjjkzeLR2v8BCQ&s";
 
   return (
-    <main>
+    <main className="custom-scrollbar flex-1 mt-96 md:mt-28 xl:mt-28 overflow-y-scroll overflow-x-hidden">
       <div
         className="w-full h-screen flex flex-col justify-center items-center gap-8"
         style={{ background: `linear-gradient(to bottom, ${bgColor}, #000)` }}
