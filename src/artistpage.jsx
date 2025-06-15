@@ -35,9 +35,9 @@ function ArtistPage({ artistName }) {
           ) : (
             <p>Artist not found</p>
           )}
-          <p className="diff_description">Public Playlist</p>
-          <p className="artist_heading">{artist.name}</p>
-          <p className="singer_info">songs by {artist.name.toLowerCase()}</p>
+          <p className="text-white italic font-medium text-2xl transform translate-x-28 translate-y-40">Public Playlist</p>
+          <p className="text-white text-8xl transform translate-x-24">{artist.name}</p>
+          <p className="text-white italic font-medium text-2xl transform translate-x-28 translate-y-20">songs by {artist.name.toLowerCase()}</p>
         </div>
 
         <div className="songs_table">
