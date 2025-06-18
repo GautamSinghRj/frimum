@@ -1,5 +1,13 @@
 
-
+.laptophome{
+  transform:translateX(-50px)
+}
+.laptopsearch{
+  transform:translateX(-50px)
+}
+.laptoplog{
+  transform:translateX(50px)
+}
 p{
   font-size: 1rem;
   color: #B3B3B3;
@@ -224,93 +232,6 @@ p{
   padding: 0.5rem 1rem;
 }
 
-@media (max-width: 480px) {
-
-  .moods {
-    width: auto;
-    min-height: 80vw;
-    border-radius: 0.5rem;
-    background: transparent;
-    overflow: hidden;
-    position: relative; 
-    text-align: center;
-  }
-  .moods img{
-    width: 60vw;
-    height: 60vw;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    position: relative;
-    z-index: 1; 
-  }
-  .artists{
-    width: 30vw; 
-  }
-  .artists img{
-  width: 30vw;
-}
-  .artist_container{
-    gap: 3rem;
-  }
-  .artists img{
-    width: 30vw;
-  }
-  .artistpage_section {
-    height: 60vh
-   }
-   .artist_img{
-    width: 40vw;
-    transform: translateX(7.5rem)translateY(6rem);
-  }
-  .diff_description{
-    font-size: 1.2rem;
-    transform: translateX(-1rem)translateY(20rem);
-  }
-  .artist_heading{
-    font-size: 2rem;
-    font-weight: bolder;
-    transform: translateX(-2rem)translateY(13rem);
-  }
-  .singer_info{
-    font-size: 1rem;
-    transform: translateX(-2rem)translateY(15rem);
-  }
-  .play{transform: translateX(0rem);}
-  .play:hover{
-  transform:translateX(0rem)scale(1.05);
-}
-  .next{transform: translateX(0rem);}
-  .next:hover{
-  transform:translateX(0rem)scale(0.9);
-}
-  .previous{transform: translateX(0rem);}
-  .previous:hover{
-  transform:translateX(0rem)scale(0.9);
-}
-  .repeat{transform: translateX(0rem);}
-  .repeat:hover{
-  transform:translateX(0rem)scale(1.05);
-}
-  .shuffle{transform: translateX(0rem);}
-  .shuffle:hover{
-  transform:translateX(0rem)scale(1.05);
-}
-.song_img img{
-  width: 15vw;
-  transform: translate(0rem,0.15rem);
-}
-.song_name,.start_len,.progress_bar{
-  display: none;
-}
-.payment_failed h1{
-   font-size: 1.4rem;
-transform: translateX(0rem);
-}
-.payment_success h1{
-   font-size: 1.4rem;
-  transform: translateX(-0rem);
-  }
-}
 .searched_song_img{
   width:30vw;
   height: 50vh;
