@@ -1,12 +1,12 @@
 @media only screen and (width: 1600px) and (height: 900px) {
 .laptophome{
-  transform:translateX(-10px)
+  transform:translateX(130px)
 }
 .laptopsearch{
-  transform:translateX(-2px)
+  transform:translateX(25px)
 }
 .laptoplog{
-  transform:translateX(10px)
+  transform:translateX(-270px)
 }}
 p{
   font-size: 1rem;
