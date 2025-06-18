@@ -51,7 +51,7 @@ function SrcSong() {
                 {song && (
                     <>
                         {image && (
-                            <img src={image} alt="Searched Song ml-96 mb-24" className="searched_song_img" />
+                            <img src={image} alt="Searched Song" className="searched_song_img ml-96 mb-24" />
                         )}
                         <h1
                             onClick={() =>
