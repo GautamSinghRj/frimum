@@ -1,13 +1,13 @@
-
+@media only screen and (width: 1600px) and (height: 900px) {
 .laptophome{
-  transform:translateX(-50px)
+  transform:translateX(-20px)
 }
 .laptopsearch{
-  transform:translateX(-50px)
+  transform:translateX(-5px)
 }
 .laptoplog{
-  transform:translateX(50px)
-}
+  transform:translateX(20px)
+}}
 p{
   font-size: 1rem;
   color: #B3B3B3;
