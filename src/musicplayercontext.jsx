@@ -15,7 +15,7 @@ export const MusicProvider = ({ children }) => {
   const [aud, setAud] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const audioRef = useRef(new Audio());
-  const [logged,setlogged] =useState(false);
+  const [logged,setLogged] =useState(false);
  
   useEffect(() => {
     audioRef.current.loop = loop;
