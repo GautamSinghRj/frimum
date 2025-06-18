@@ -7,7 +7,14 @@
 }
 .laptoplog{
   transform:translateX(-270px)
-}}
+}
+.laptopimg{
+  transform:translateX(25px)
+}
+.laptoptext{
+  transform:translateX(25px)
+}
+}
 p{
   font-size: 1rem;
   color: #B3B3B3;
