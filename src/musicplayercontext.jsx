@@ -15,7 +15,7 @@ export const MusicProvider = ({ children }) => {
   const [aud, setAud] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const audioRef = useRef(new Audio());
-  
+  const [logged,setlogged] =useState(false);
  
   useEffect(() => {
     audioRef.current.loop = loop;
@@ -139,6 +139,8 @@ try {
   return (
     <MusicContext.Provider
       value={{
+        logged,
+        setLogged,
         inputValue,
         setInputValue,
         aud,
