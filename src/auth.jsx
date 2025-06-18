@@ -1,9 +1,10 @@
-
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { authService } from './authService';
 import { useNavigate } from 'react-router-dom';
+import { MusicContext } from "./musicplayercontext";
 
 const Auth = () => {
+  const { logged, setLogged } = useContext(MusicContext);
   const [mode, setMode] = useState('login'); 
   const [formData, setFormData] = useState({
     username: '',
@@ -35,6 +36,7 @@ const Auth = () => {
       
       if (mode === 'login') {
         response = await authService.login(formData.username, formData.password);
+        setLogged(true); // Set logged state to true on successful login
       } else if (mode === 'register') {
         response = await authService.register(
           formData.username, 
@@ -51,10 +53,29 @@ const Auth = () => {
       const errorMessage = typeof err === 'string' ? err : 'Operation failed. Please try again.';
       setError(errorMessage);
       
-     
       if (mode === 'login' && errorMessage.includes('not found')) {
         setError('User not found. Would you like to create an account?');
       }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    setLoading(true);
+    setError('');
+    setSuccess('');
+
+    try {
+      await authService.logout();
+      setLogged(false);
+      setSuccess('Logged out successfully!');
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
+    } catch (err) {
+      const errorMessage = typeof err === 'string' ? err : 'Logout failed. Please try again.';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -66,6 +87,53 @@ const Auth = () => {
     setSuccess('');
   };
 
+  // If user is logged in, show logout interface
+  if (logged) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="mb-6">
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
+                You're logged in!
+              </h2>
+            </div>
+            
+            {error && (
+              <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-md">
+                {error}
+              </div>
+            )}
+            
+            {success && (
+              <div className="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-md">
+                {success}
+              </div>
+            )}
+            
+            <div className="space-y-4">
+              <button 
+                onClick={handleLogout}
+                disabled={loading} 
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              >
+                {loading ? 'Logging out...' : 'Logout'}
+              </button>
+              
+              <button 
+                onClick={() => navigate('/')}
+                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+              >
+                Go to Home
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Original login/register form for when user is not logged in
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
