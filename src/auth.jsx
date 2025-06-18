@@ -36,7 +36,7 @@ const Auth = () => {
       
       if (mode === 'login') {
         response = await authService.login(formData.username, formData.password);
-        setLogged(true); // Set logged state to true on successful login
+        setLogged(true); 
       } else if (mode === 'register') {
         response = await authService.register(
           formData.username, 
